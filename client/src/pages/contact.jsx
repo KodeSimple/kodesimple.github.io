@@ -1,12 +1,7 @@
- //rfce shortcut 
-import React from 'react'  
+import React from 'react';
 
-function contact() {
-  return (
-    <div>
-      this is blog page
-    </div>
-  )
+function Contact() {
+  return <h2>Contact</h2>;
 }
 
-export default contact
+export default Contact
