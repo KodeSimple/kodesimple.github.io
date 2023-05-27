@@ -1,51 +1,28 @@
-// // import logo from './logo.svg';
-// import './App.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import Footer from './components/Footer';
-// // import AppRoutes from './components/routes';
-// import NavBarComp from './components/NavBarComp';
-
-// function App() {
-//   return (
-//     <>   
-//          <div className="NavBar">
-//              <NavBarComp/>
-//          </div>
-//          <div className="Footer">
-//              <Footer/>
-//          </div>
-//     </>
-//   );
-// }
-
-// export default App;
-
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Home from './components/Home';
-import About from './components/About';
-import Pricing from './components/Pricing';
-import Blog from './components/Blog';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import * as React from "react";
 import NavBarComp from './components/NavBarComp';
-import Container from 'react-bootstrap'
+import Footer from './components/Footer';
+import AppRoutes from './components/routes';
+import RegistrationForm from './components/RegistrationForm';
+import SignIn from './components/SigIn';
 
 
-function App() {
-  return (
-    <>
-          <NavBarComp />
-         <main>
-            <Container>
-               <h1>Body</h1>
-            </Container>
-        </main>
-          <Footer />
-   </>
-  );
-}
+    function App() {
+      return(
+            <>
+               <div>  
+                  <div><NavBarComp /></div> 
+                   <main>
+                     <div className="d-flex justify-content-end d-block container-fluid flex-row w-75">
+                        <div className="px-3" ><SignIn /></div>
+                        <div className="px-3"><RegistrationForm /></div> 
+                     </div>
+                      <div><AppRoutes /></div> 
+                   </main>
+                   <div><Footer /></div>
+               </div>
+           </>
+         )
+      }
 
 export default App;
-

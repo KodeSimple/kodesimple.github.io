@@ -6,7 +6,17 @@
   color: white;
   text-decoration: none;
 }
-.navBarBrand{margin-right: 70px;}
+
+.navbar{
+   margin-left:0%;
+      }
+
+.navBarBrand{
+        margin-top:10px;
+        margin-bottom: 10px;
+        margin-right: 11vh;
+        /* margin-right: 50px; */
+        }
 
 .nav-link::after {
   opacity: 0;
@@ -24,7 +34,8 @@
   opacity: 0.5;
  }
 
-.navBarColor{background-color: #036384;
+.navBarColor{
+    background-color: #036384;
     }
 
 .nav-link:hover {

@@ -2,22 +2,18 @@ import React from 'react'
 import './Footer.css';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-// import Features from './Features';
-import Home from '../pages/Home';
-// import About from './About';
-// import Pricing from '.';
-import Blog from '../pages/Blog';
-import Contact from '../pages/Contact';
+import { Link } from 'react-router-dom';
 
 
 function Footer() {
-  return (
+  return ( <footer>
+           <>
+           
         <div className="page-footer justify-content-center d-flex container-fluid w-100"> 
            <p>
                 {/* //////////////insert footer from mp2 here///////////////////////////// */}
                            {/* <!-----footer container set 1 starts here------> */}
-                   <Router>        
+                   {/* <Router>         */}
                      <Navbar>
                            <div class="d-flex flex-row mb-1 footerNavMobileRes w-100 justify-content-center">
                              <div class="p-2">
@@ -88,17 +84,20 @@ function Footer() {
                            {/* <!----------------copyright---------------------> */}
                          
                 {/* ////////////////////////////Routes//////////////////////////////// */}
-                       <Routes>
+                       {/* <Routes> */}
                             {/* <Route path="/features" element={<Features />} /> */}
-                            <Route path="/home" element={<Home />} />
+                            {/* <Route path="/home" element={<Home />} /> */}
                             {/* <Route path="/about" element={<About />} /> */}
                             {/* <Route path="/pricing" element={<Pricing />} /> */}
-                            <Route path="/blog" element={<Blog />} />
-                            <Route path="/contact" element={<Contact />} />
-                          </Routes>
-                </Router>
+                            {/* <Route path="/blog" element={<Blog />} */}
+                            {/* <Route path="/contact" element={<Contact />} /> */}
+                          {/* </Routes> */}
+                {/* </Router> */}
             </p>
         </div>  
+      </>
+      </footer>
+
   )
 }
 
