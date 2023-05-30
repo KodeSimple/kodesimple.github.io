@@ -36,7 +36,7 @@ function Home() {
 
                                    {/* Features section starts here */}
                                 
-                                   <section class="features bg-success-subtle">  {/* <!-- starts of features section here*/}
+                                   <section className="features bg-success-subtle">  {/* <!-- starts of features section here*/}
                                    <div class="d-flex flex-row justify-content-center pt-5 flex-nowrap container-fluid">
                                           <div class=" w-75">
                                            <h2 class="text-center pt-5">Features</h2>
@@ -45,13 +45,13 @@ function Home() {
                                    </div>     
                                    
                                       {/* flex container set-1 starts here  */}
-                                            <div class="d-flex d-block flex-row container-fluid justify-content-center
+                                            <div className="d-flex d-block flex-row container-fluid justify-content-center
                                                       features-responses w-75 pt-0">   
                                                       
-                                                <div class="p-2 w-100 align-self-center">  {/* <!--  flex container main*/}                         
+                                                <div className="p-2 w-100 align-self-center">  {/* <!--  flex container main*/}                         
                                                     <h4>Selling is easy using your mobile as portable POS</h4>
                                                     <p class="text-start pt-3 container-fluid text-decoration-none">
-                                                     <div class="">
+                                                     <div className="">
                                                        <ul >    
                                                              <li>
                                                                <p>
@@ -72,7 +72,7 @@ function Home() {
                                                      </div>
                                                     </p>
                                                 </div>
-                                                <div class="p-2  w-100">
+                                                <div className="p-2  w-100">
                                                       <p>
                                                       <img src={scanningPackage} alt="scanning-package" className="index-brochure w-100" fluid />
                                                        <a href="https://www.freepik.com/free-photo/online-store-employee-scanning-information-product-package_31298535.htm#query=barcode&position=4&from_view=search&track=robertav1_2_sidr">Image by zinkevych</a> on Freepik
@@ -82,11 +82,11 @@ function Home() {
                                    
                                            {/* flex container set-1 ends here */}
                                             {/* <!--  flex container set-2 starts here-->           */}
-                                              <div class="d-flex flex-row container-fluid justify-content-center
+                                              <div className="d-flex flex-row container-fluid justify-content-center
                                                     flex d-block flex-row w-75 features-responses">  {/* <!--  flex container main */}
                                                   <div class="p-2 w-100 align-self-center">
                                                       <h4>Inventory management</h4>
-                                                      <p class="text-start pt-3 container-fluid">
+                                                      <p className="text-start pt-3 container-fluid">
                                                          <ul>
                                                               <li>
                                                                    <p>
@@ -106,7 +106,7 @@ function Home() {
                                                          </ul>
                                                      </p>
                                                   </div>
-                                                  <div class="p-2  w-100">
+                                                  <div className="p-2  w-100">
                                                         <p>
                                                         <img src={scanningBox} alt="scanning-box" className="index-brochure w-100" fluid />
                                                          Image by <a href="https://www.freepik.com/free-photo/close-up-scanning-box_13450095.htm#query=barcode&position=3&from_view=search&track=robertav1_2_sidr">Freepik</a>
@@ -115,11 +115,11 @@ function Home() {
                                             </div>
                                   {/* <!--  flex container set-2 ends here-->  */}
                                           {/* <!--  flex container set-3 starts here--> */}
-                                      <div class="d-flex d-block flex-row container-fluid justify-content-center
+                                      <div className="d-flex d-block flex-row container-fluid justify-content-center
                                                         features-responses w-75 flex-nowrap ">
-                                             <div class="p-2 w-100 align-self-center">  {/* <!--  flex container main --> */}         
+                                             <div className="p-2 w-100 align-self-center">  {/* <!--  flex container main --> */}         
                                                <h4>Sales Summary</h4>
-                                                 <p class="text-start pt-3 container-fluid">
+                                                 <p className="text-start pt-3 container-fluid">
                                                  <ul>
                                                    <li>
                                                      <p>
@@ -139,7 +139,7 @@ function Home() {
                                                  </ul>
                                                  </p>
                                              </div>
-                                             <div class="p-2  w-100">
+                                             <div className="p-2  w-100">
                                                <p>
                                                  <img src={growthArrow} alt="growth arrow" className="index-brochure w-100" fluid />
                                                  Image by <a
@@ -149,11 +149,11 @@ function Home() {
                                            </div>
                                            {/* <!--  flex container set-3 ends here--> */}
                                            {/* <!--  flex container set-4 starts here--> */}
-                                           <div class="d-flex d-block flex-row container-fluid justify-content-center
+                                           <div className="d-flex d-block flex-row container-fluid justify-content-center
                                                                      features-responses w-75 flex-nowrap">
-                                             <div class="p-2 w-100 align-self-center"> {/* <!--  flex container main --> */}
+                                             <div className="p-2 w-100 align-self-center"> {/* <!--  flex container main --> */}
                                                <h4>System's compatibility</h4>
-                                               <p class="text-start pt-3 container-fluid">
+                                               <p className="text-start pt-3 container-fluid">
                                                <ul>
                                                  <li>
                                                    <p>Compatible with bluetooth wireless barcode scanner.</p>
@@ -167,10 +167,10 @@ function Home() {
                                                </ul>
                                                </p>
                                              </div>
-                                             <div class="p-2  w-100">
+                                             <div className="p-2  w-100">
                                                <p>
                                                <img src={responsive} alt="responsive" className="index-brochure w-100" fluid />
-                                               <div class="text-center">
+                                               <div className="text-center">
                                                  <a
                                                    href="https://www.freepik.com/free-vector/technology-devices-illustration_7057091.htm#query=mobile%20responsive&position=29&from_view=search&track=ais">Image
                                                    by studiogstock</a> on Freepik
@@ -182,28 +182,28 @@ function Home() {
                         {/* <!-- End of features section --> */}
                             {/* features section ends here */}
                            {/* <!-- starts of pricing section --> */}
-                   <section id="pricing" class=" bg-info-subtle">
+                   <section id="pricing" className=" bg-info-subtle">
                           <img src={pricing} alt="POS brochure" className="index-brochure w-100" fluid />
                    </section>
              </div> {/* background end tag */}
                    {/* <!-- End of pricing section here --> */}
                                 {/* <!-- About us section starts here --> */}
-                    <section id="about" class="firstLandingPage pt-5 ">
-                      <h2 class="text-center">
+                    <section id="about" className="firstLandingPage pt-5 ">
+                      <h2 className="text-center">
                         About Us
                       </h2>
                       {/* <!--  flex container main --> */}
-                      <div class="d-flex d-block f justify-content-center
+                      <div className="d-flex d-block f justify-content-center
                                                p-2 flex-row container-fluid about-responses w-50">
                         {/* <!--  flex item 1 starts here--> */}
-                        <div class="w-100 bg-body flex-nowrap">     {/* <!--container item set 1 --> */}   
+                        <div className="w-100 bg-body flex-nowrap">     {/* <!--container item set 1 --> */}   
                           <div class="d-flex flex-column container-fluid bg-black ">
-                            <div class="p-2 w-100">
+                            <div className="p-2 w-100">
                               <p>
                               <img src={JoelProfile} alt="Joel Profile" className="index-brochure w-100" fluid />
                               </p>
                             </div>
-                            <div class="p-2  w-100 container-fluid">
+                            <div className="p-2  w-100 container-fluid">
                               <p>
                                 joel's github account here
                               </p>
@@ -212,14 +212,14 @@ function Home() {
                         </div>
                         {/* <!--  flex item 1 ends here--> */}
                         {/* <!--  flex item 2 stars here--> */}
-                        <div class="w-100 bg-body-secondary flex-nowrap"> {/* <!--container item set 2 --> */}   
-                          <div class="d-flex flex-column container-fluid bg-success">
-                            <div class="p-2  w-100">
+                        <div className="w-100 bg-body-secondary flex-nowrap"> {/* <!--container item set 2 --> */}   
+                          <div className="d-flex flex-column container-fluid bg-success">
+                            <div className="p-2  w-100">
                               <p>
                               <img src={JinkyProfile} alt="Jinky Profile" className="index-brochure w-100" fluid />
                               </p>
                             </div>
-                            <div class="p-2  w-100 container-fluid">
+                            <div className="p-2  w-100 container-fluid">
                               <p>
                                 Jinky's github account here
                               </p>
@@ -228,14 +228,14 @@ function Home() {
                         </div> 
                         {/* <!--  flex item 2 ends here--> */}
                         {/* <!--  flex item 3 starts here--> */}
-                        <div class="w-100 bg-body flex-nowrap">     {/* <!--container item set 1 --> */}   
-                          <div class="d-flex flex-column container-fluid bg-black ">
-                            <div class="p-2 w-100">
+                        <div className="w-100 bg-body flex-nowrap">     {/* <!--container item set 1 --> */}   
+                          <div className="d-flex flex-column container-fluid bg-black ">
+                            <div className="p-2 w-100">
                               <p>
                               <img src={RenzProfile} alt="Joel Profile" className="index-brochure w-100" fluid />
                               </p>
                             </div>
-                            <div class="p-2  w-100 container-fluid">
+                            <div className="p-2  w-100 container-fluid">
                               <p>
                                 Renz github account here
                               </p>
@@ -247,12 +247,12 @@ function Home() {
                     </section>
                    {/* end of about us section */}
                    {/* <!-- FAQ section starts here --> */}
-                      <section id="faq pt-5">
-                        <div class="text-center pt-5">
-                          <div class="p-2">
+                      <section id="faq" className="pt-5"> 
+                        <div className="text-center pt-5">
+                          <div className="p-2">
                             <h2>Frequently Asked Questions</h2>
-                            <div class=" faq d-flex d-block w-100 justify-content-center 100"> {/* <!--- flex container main start tag----> */}  
-                              <div class="p-0 w-75 faq-accordion">  {/* <!------firt item start tag------> */}
+                            <div className=" faq d-flex d-block w-100 justify-content-center 100"> {/* <!--- flex container main start tag----> */}  
+                              <div className="p-0 w-75 faq-accordion">  {/* <!------firt item start tag------> */}
                                 {/* <!---------accrodion starts here---------> */}
                                 <Accordion>
                                         <Accordion.Item eventKey="0">
