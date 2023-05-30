@@ -1,0 +1,40 @@
+
+.page-footer{background-color: #036384;}
+
+/*  Footer mobile responsive section starts here */
+@media (max-width: 400px) and (min-width: 300px) {  
+    .footerNavMobileRes {
+      flex-direction: row !important;
+    }
+  }
+  
+  @media (max-width: 797px) and (min-width: 300px) {
+    .footerNavMobileRes {flex-wrap: wrap !important;
+    }
+  }
+  
+  .footerButton{
+    /* max-width: 10px; */
+    background-color: #e9f3f1;
+    border: 2px solid #036384;
+    border-radius: 10px;
+    color: rgb(17, 23, 26);
+    cursor: pointer;
+   
+    font-weight: bold;
+  
+    font-family: 
+      'Trebuchet MS',
+       /* 'Lucida Sans Unicode', 
+       'Lucida Grande', 
+       'Lucida Sans',
+        Arial,
+         sans-serif; */
+         
+     }
+  
+  .footerButton:hover {
+    background-color: #036384;
+    border: 2px solid #036384;
+  }
+  /*  Footer mobile responsive section ends here */
