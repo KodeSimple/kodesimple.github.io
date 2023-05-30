@@ -1,9 +1,9 @@
-import './NavBarComp.css';
+import '../header/NavBarComp.css';
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
-import brandLogo from './resources/mp2-brand-logo.jpg';
+import brandLogo from '../resources/mp2-brand-logo.jpg';
 
 function NavBarComp() {
   return (

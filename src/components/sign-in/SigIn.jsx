@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import '../components/SignIn.css'
+import '../sign-in/SignIn.css'
 
 function SignIn() {
   const [show, setShow] = useState(false);
-
   const handleCloseLogInForm= () => setShow(false);
   const handleShowLogInForm = () => setShow(true);
 

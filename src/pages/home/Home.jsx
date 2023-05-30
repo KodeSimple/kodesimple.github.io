@@ -1,31 +1,34 @@
 import React from 'react';
-import '../pages/Home.css';
+import '../home/Home.css';
 // import RegistrationForm from '../components/RegistrationForm';
 // import SignIn from '../components/SigIn'
-import mainPageBanner from '../components/resources/mp2banner.png'
-import scanningPackage from '../components/resources/scanning-package.jpg'
-import scanningBox from '../components/resources/close-up-scanning-box.jpg'
-import growthArrow from '../components/resources/hand-holding-growth-arrow-with-coins.jpg'
-import responsive from '../components/resources/responive.png'
-import pricing from '../components/resources/pricing.png'
-import JoelProfile from '../components/resources/picture.jpg'
-import JinkyProfile from '../components/resources/picture.jpg'
-import RenzProfile from '../components/resources/picture.jpg'
+import mainPageBanner from '../../components/resources/mp2banner.png'
+import scanningPackage from '../../components/resources/scanning-package.jpg'
+import scanningBox from '../../components/resources/close-up-scanning-box.jpg'
+import growthArrow from '../../components/resources/hand-holding-growth-arrow-with-coins.jpg'
+import responsive from '../../components/resources/reponsive.png'
+import pricing from '../../components/resources/pricing.png'
+import JoelProfile from '../../components/resources/picture.jpg'
+import JinkyProfile from '../../components/resources/picture.jpg'
+import RenzProfile from '../../components/resources/picture.jpg'
 import Accordion from 'react-bootstrap/Accordion';
+import RegistrationForm from '../../components/registration-form/RegistrationForm';
+import SignIn from '../../components/sign-in/SigIn';
+
 
 function Home() {
       
  
   return (
     <>
-      <div>
-        <div className="HomePagebackGroundColor">
-          {/* <RegistrationForm /> */}
-   
-               {/* <div className="d-flex justify-content-end d-block container-fluid flex-row w-75">
-                  <div className="px-3" ><SignIn /></div>
-                  <div className="px-3"><RegistrationForm /></div> 
-               </div> */}
+      <div className='bg-light'>
+                          {/* registrtion form and sign in button starts here*/}
+      <div className="d-flex justify-content-end d-block container-fluid flex-row">
+                        <div className="px-3" ><SignIn /></div>
+                        <div className="px-3"><RegistrationForm /></div> 
+                     </div>
+                           {/* home page body content starts here */}
+        <div className="HomePagebackGroundColor">         
             <img src={mainPageBanner} alt="POS brochure" className="index-brochure w-100" fluid />
               {/* POS banner ends herelogo */}
 
