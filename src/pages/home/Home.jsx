@@ -6,7 +6,7 @@ import mainPageBanner from '../../components/resources/mp2banner.png'
 import scanningPackage from '../../components/resources/scanning-package.jpg'
 import scanningBox from '../../components/resources/close-up-scanning-box.jpg'
 import growthArrow from '../../components/resources/hand-holding-growth-arrow-with-coins.jpg'
-import responsive from '../../components/resources/reponsive.png'
+import responsive from '../../components/resources/responsive.png'
 import pricing from '../../components/resources/pricing.png'
 import JoelProfile from '../../components/resources/picture.jpg'
 import JinkyProfile from '../../components/resources/picture.jpg'
@@ -21,12 +21,14 @@ function Home() {
  
   return (
     <>
-      <div className='bg-light'>
+      <div className=''>
                           {/* registrtion form and sign in button starts here*/}
-      <div className="d-flex justify-content-end d-block container-fluid flex-row">
+      <div className="w-100">
+                   <div className="d-flex justify-content-end w-75 d-block container-fluid flex-row"> 
                         <div className="px-3" ><SignIn /></div>
                         <div className="px-3"><RegistrationForm /></div> 
-                     </div>
+                    </div>      
+                </div>
                            {/* home page body content starts here */}
         <div className="HomePagebackGroundColor">         
             <img src={mainPageBanner} alt="POS brochure" className="index-brochure w-100" fluid />
