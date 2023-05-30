@@ -1,5 +1,5 @@
 import React from 'react'
-import './Footer.css';
+import '../footer/Footer.css';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
@@ -13,7 +13,6 @@ function Footer() {
            <p>
                 {/* //////////////insert footer from mp2 here///////////////////////////// */}
                            {/* <!-----footer container set 1 starts here------> */}
-                   {/* <Router>         */}
                      <Navbar>
                            <div class="d-flex flex-row mb-1 footerNavMobileRes w-100 justify-content-center">
                              <div class="p-2">
@@ -82,17 +81,9 @@ function Footer() {
                            </div> 
                            {/* <!------flex main container end tag-------> */}
                            {/* <!----------------copyright---------------------> */}
-                         
-                {/* ////////////////////////////Routes//////////////////////////////// */}
-                       {/* <Routes> */}
-                            {/* <Route path="/features" element={<Features />} /> */}
-                            {/* <Route path="/home" element={<Home />} /> */}
-                            {/* <Route path="/about" element={<About />} /> */}
-                            {/* <Route path="/pricing" element={<Pricing />} /> */}
-                            {/* <Route path="/blog" element={<Blog />} */}
-                            {/* <Route path="/contact" element={<Contact />} /> */}
-                          {/* </Routes> */}
-                {/* </Router> */}
+                         {/* modification here */}
+ 
+                         {/* modification ends here */}
             </p>
         </div>  
       </>

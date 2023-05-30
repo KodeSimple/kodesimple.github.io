@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Home from '../pages/Home';
-import Blog from '../pages/Blog';
-import Contact from '../pages/Contact';
-import NoPage from '../pages/NoPage';
+import Home from '../../pages/home/Home';
+import Blog from '../../pages/blog/Blog';
+import Contact from '../../pages/contact/Contact';
+import NoPage from '../../pages/no-pages/NoPage';
 
 function AppRoutes() {
   return (

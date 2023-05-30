@@ -1,4 +1,5 @@
-.HomePagebackGroundColor{background-color: #d1e6dd}
+.HomePagebackGroundColor{background-color: #d1e6dd};
+.homeField{background-color: #14241d};
 
 /* ------Body Media query starts here---------*/
 @media (max-width: 400px) {
@@ -33,3 +34,4 @@
       width: 100% !important;
     }
   }
+
