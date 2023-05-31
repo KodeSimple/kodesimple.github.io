@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 function Blog() {
   return(
      <>
@@ -9,6 +10,9 @@ function Blog() {
                         <div class="pt-5 w-50 bg-body">
                          <h1>Blog</h1>
                          <hr class="hrLines" />
+                            {/* blogs contents start here */}
+
+                              {/* blogs contents ends here */}
                         </div>
                     </div>
              </secction>

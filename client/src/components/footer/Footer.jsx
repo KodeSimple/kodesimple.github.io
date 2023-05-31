@@ -28,11 +28,6 @@ function Footer() {
                                  </div>
                                  <div class="p-0">
                                      <Navbar>
-                                        <Nav.Link className="" href="Product">Product</Nav.Link>
-                                     </Navbar> 
-                                 </div>
-                                 <div class="p-0">
-                                     <Navbar>
                                         <Nav.Link className="" href="Features">Features</Nav.Link>
                                      </Navbar> 
                                  </div>
@@ -40,11 +35,6 @@ function Footer() {
                                      <Navbar>
                                          <Nav.Link className="" href="About">About</Nav.Link>
                                      </Navbar> 
-                                 </div>
-                                 <div class="p-0">
-                                      <Navbar>
-                                          <Nav.Link className="" href="Pricing">Pricing</Nav.Link>
-                                      </Navbar> 
                                  </div>
                                  <div class="p-0">
                                      <Navbar>

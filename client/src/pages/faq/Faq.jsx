@@ -1,65 +1,20 @@
-import React from 'react';
-import '../home/Home.css';
-import mainPageBanner from '../../components/resources/mp2banner.png'
-import pricing from '../../components/resources/pricing.png'
+import React from 'react'
 import Accordion from 'react-bootstrap/Accordion';
-import RegistrationForm from '../../components/registration-form/RegistrationForm';
-import SignIn from '../../components/sign-in/SigIn';
-import About from '../about/About';
-import Faq from '../faq/Faq';
-import Features from '../features/Features';
 
-
-
-function Home() {
- 
-
+function Faq() {
   return (
-    <>
-      
-      <div className=''>
-                          {/* registrtion form and sign in button starts here*/}
-      <div className="w-100">
-                   <div className="d-flex justify-content-end w-75 d-block container-fluid flex-row"> 
-                        <div className="px-3" ><SignIn /></div>
-                        <div className="px-3"><RegistrationForm /></div> 
-                    </div>      
-                </div>
-                           {/* home page body content starts here */}
-        <div className="HomePagebackGroundColor">         
-            <img src={mainPageBanner} alt="POS brochure" className="index-brochure w-100" fluid />
-              {/* POS banner ends herelogo */}
-
-                         {/* Features section starts here */}
-                            <Features />   
-                            {/* features section ends here */}
-                           {/* <!-- starts of pricing section --> */}        
-                   <section id="pricing" className=" bg-info-subtle">
-                          <img src={pricing} alt="POS brochure" className="index-brochure w-100" fluid />
-                   </section>
-             </div> {/* background end tag */}
-                   {/* <!-- End of pricing section here --> */}
-                                {/* <!-- About us section starts here --> */}
-                    <section id="about" className="firstLandingPage pt-5 ">
-                                <h1 className="text-center">About us</h1>
-                                {/* short content introduction below here */}
-                                <div className='text-center'>
-                                  <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae  nam omnis numquam magnam harum quos debitis, vitae itaque a!
-                                  </p>
-                                </div>
-                                    {/* to view more link below here */}
-                                    <div className="p-0 d-flex justify-content-center">
-                                           <a className="hrefLink" href="/about" onClick={About}>Learn more</a>
-                                    </div>
-                    </section>
-                                    {/* about section ends here */}
-                   {/* end of about us section */}
-                   {/* <!-- FAQ section starts here --> */}
-                      <section id="faqhome" className="pt-5"> 
-                        <div className="text-center pt-5">
+    <div>
+           {/* faq content starts here */}
+               {/* <!-- FAQ section starts here --> */}
+               <section id="faqhome" className="pt-1"> 
+                      <div class="d-flex flex-row justify-content-center align-self-center bg-body-emphasis pt-5 flex-nowrap container-fluid">
+                              <div class="pt-5 w-75 bg-body">
+                                    <h2>Frequently Asked Questions</h2>
+                                    <hr class="hrLines" />
+                              </div>
+                        </div>
+                        <div className="text-center pt-1">
                           <div className="p-2">
-                            <h2>Frequently Asked Questions</h2>
                             <div className=" faq d-flex d-block w-100 justify-content-center 100"> {/* <!--- flex container main start tag----> */}  
                               <div className="p-0 w-75 faq-accordion">  {/* <!------firt item start tag------> */}
                                 {/* <!---------accrodion starts here---------> */}
@@ -118,18 +73,10 @@ function Home() {
                             </div> {/* <!--- flex container main end tag---->*/}
                           </div>
                         </div>
-                                        {/* faq learn more button starts here */}
-                                        <div className="p-0 d-flex justify-content-center pb-5">
-                                             <a className="hrefLink" href="/faq" onClick={Faq}>Learn more</a>
-                                         </div>
-                                        {/* faq learn more button ends here */}
-                                    
                       </section>{/* <!-- FAQ section ends here --> */}
-                             
-       </div>  {/* main div end tag */}
-    </>
-  );
+           {/* faq contents ends here */}
+    </div>
+  )
 }
 
-export default Home;
-
+export default Faq
