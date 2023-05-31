@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import '../registration-form/RegistrationForm.css'
+import '../registration-form/RegistrationForm.css';
+import Registration from '../../pages/Registration/Registration';
 
 function RegistrationButton() {
   const [show, setShow] = useState(false);
@@ -22,7 +23,7 @@ function RegistrationButton() {
           <Offcanvas.Title>Registration Form</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          form here
+               <div> <Registration /></div>
         </Offcanvas.Body>
       </Offcanvas>
     </>

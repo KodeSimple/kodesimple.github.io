@@ -1,13 +1,20 @@
 import React from 'react'
-import scanningPackage from '../../components/resources/scanning-package.jpg'
-import scanningBox from '../../components/resources/close-up-scanning-box.jpg'
-import growthArrow from '../../components/resources/hand-holding-growth-arrow-with-coins.jpg'
+import scanningPackage from '../../components/resources/scanning-package.jpg';
+import scanningBox from '../../components/resources/close-up-scanning-box.jpg';
+import growthArrow from '../../components/resources/hand-holding-growth-arrow-with-coins.jpg';
 import responsive from '../../components/resources/responsive.png'
+import Footer from '../../components/footer/Footer';
+import NavBarComp from '../../components/header/NavBarComp';
 
 function Features() {
   return (
-  <>
-     <div>
+  <>  
+
+    <main>
+          {/* header section  starts here */}
+               <NavBarComp />
+          {/* header section ends here */}
+         <div>
            {/* features content starts here */}
            <section className="features bg-success-subtle">  {/* <!-- starts of features section here*/}
                                    <div class="d-flex flex-row justify-content-center pt-5 flex-nowrap container-fluid">
@@ -154,7 +161,11 @@ function Features() {
                       </section>
 
             {/* features content ends here */}
-    </div>
+         </div>
+            {/* footer section starts here */}
+                     <Footer />
+            {/* footer section ends here */}
+    </main>         
   </>
     
   )

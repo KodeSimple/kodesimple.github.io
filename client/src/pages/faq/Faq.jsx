@@ -1,9 +1,17 @@
 import React from 'react'
 import Accordion from 'react-bootstrap/Accordion';
+import NavBarComp from '../../components/header/NavBarComp';
+import Footer from '../../components/footer/Footer';
 
 function Faq() {
   return (
-    <div>
+    <>
+      
+    <div> 
+                      { /* header section  starts here */}
+                             <NavBarComp />
+                       {/* header section ends here */}
+      <main>
            {/* faq content starts here */}
                {/* <!-- FAQ section starts here --> */}
                <section id="faqhome" className="pt-1"> 
@@ -74,8 +82,13 @@ function Faq() {
                           </div>
                         </div>
                       </section>{/* <!-- FAQ section ends here --> */}
-           {/* faq contents ends here */}
-    </div>
+                     {/* faq contents ends here */}
+       </main>
+    </div>  
+                    {/* footer section starts here */}
+                            <Footer />
+                    {/* footer section ends here */}
+    </>
   )
 }
 

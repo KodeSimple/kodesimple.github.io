@@ -1,9 +1,16 @@
 import React from 'react';
+import NavBarComp from '../../components/header/NavBarComp';
+import Footer from '../../components/footer/Footer';
 
 
 function Blog() {
   return(
      <>
+       
+          {/* header section  starts here */}
+               <NavBarComp />
+          {/* header section ends here */}
+      <main>
          <div>
               <secction class="blog">
                     <div class="d-flex flex-row justify-content-center align-self-center bg-body-emphasis pt-5 flex-nowrap container-fluid">
@@ -16,7 +23,12 @@ function Blog() {
                         </div>
                     </div>
              </secction>
-        </div>
+          </div>
+     </main>
+          {/* footer section starts here */}
+                <Footer />
+          {/* footer section ends here */}
+
      </>
    )
 }

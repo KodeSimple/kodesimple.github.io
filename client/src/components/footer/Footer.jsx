@@ -4,15 +4,14 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
-// import { Envelope } from 'react-bootstrap-icons';
 import facebookLogo from '../resources/icons8-facebook-64.png';
 import gmailLogo from '../resources/Gmail_icon_(2020).svg.webp';
 import messengerLogo from '../resources/messenger-logo-removebg-preview.png';
 
 function Footer() {
-  return ( <footer>
-           <>
-           
+  return ( 
+     <>  
+     <footer>   
         <div className="page-footer justify-content-center d-flex container-fluid w-100"> 
            <p>
                 {/* //////////////insert footer from mp2 here///////////////////////////// */}
@@ -104,10 +103,10 @@ function Footer() {
                                {/* <!----------------copyright---------------------> */}
                              </footer>
                                                   {/* modification ends here */}
-            </p>
-        </div>  
+                 </p>
+            </div>  
+         </footer>
       </>
-      </footer>
 
   )
 }

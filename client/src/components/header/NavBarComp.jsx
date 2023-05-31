@@ -25,9 +25,6 @@ function NavBarComp() {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-
-      
-
       </div>
     </div>
   );

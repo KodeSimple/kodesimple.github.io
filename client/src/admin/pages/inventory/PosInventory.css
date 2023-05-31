@@ -1,0 +1,115 @@
+
+/* HEADER SECTION END */
+.footerBgColor{background-color: #036384;}
+.footerAllPage {
+  align-items: last baseline;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+ Blog Page Section starts here
+*/
+hr.hrLines {
+  border: 5px solid green;
+  border-radius: 5px;
+}
+
+
+/*  Reposive table start here*/
+.table-container{overflow-x:auto};
+
+/*  Reposive table ends here */
+
+
+
+/* registration form section */
+/* body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+} */
+
+/* form {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  padding: 20px;
+  width: 350px;
+} */
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* input[type="text"],
+input[type="email"],
+input[type="password"] {
+  border: none;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+} */
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+button[type="submit"] {
+  background-color: #343f3e;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  padding: 10px;
+  width: 50%;
+}
+
+button[type="submit"]:hover {
+  background-color: #4d7e92;
+}
+
+.success {
+  background-color: #d4edda;
+  border-radius: 5px;
+  color: #155724;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.field-container {
+  margin-bottom: 20px;
+}
+
+/*   registration form ends here */
+
+/* inventory management area */
+
+.tableToHide{display: none;}
+
+input[type="text"],
+input[type="number"]{
+  border: none;
+  border-radius: 3px;
+  box-shadow: inset 0 2px 3px rgba(0,0,0,.1);
+  font-size: 16px;
+  padding: 2px;
+  width: 100%;
+}
+
+.fontStyling{font-size: 16px; font-weight: bold;}

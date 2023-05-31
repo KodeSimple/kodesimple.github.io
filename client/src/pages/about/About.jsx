@@ -2,11 +2,17 @@ import React from 'react'
 import JoelProfile from '../../components/resources/picture.jpg'
 import JinkyProfile from '../../components/resources/picture.jpg'
 import RenzProfile from '../../components/resources/picture.jpg'
+import NavBarComp from '../../components/header/NavBarComp'
+import Footer from '../../components/footer/Footer'
 
 function About() {
   return (
     <>
-      <div>
+                           {/* header section  starts here */}
+                                       <NavBarComp />
+                            {/* header section ends here */}
+        <main>                  
+            <div>
                            {/* insert code starts here */}
                           {/* <!--  flex container main --> */}
                     <div class="d-flex flex-row justify-content-center align-self-center bg-body-emphasis pt-5 flex-nowrap container-fluid">
@@ -67,8 +73,12 @@ function About() {
                         </div>
                         {/* <!--  flex item 3 ends here--> */}
                       </div>   
-            {/* inserterted code ends here */}
-      </div>
+                  {/* inserterted code ends here */}
+           </div>
+      </main>  
+                 {/* footer section starts here */}
+                       <Footer />
+                 {/* footer section ends here */}
     </>
     
   )
