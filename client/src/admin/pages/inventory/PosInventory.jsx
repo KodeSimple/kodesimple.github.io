@@ -2,6 +2,8 @@ import React from 'react'
 import '../inventory/PosInventory.css'
 import PosNavBarComp from '../../component/header/PosNavBarComp';
 import PosFooter from '../../component/footer/PosFooter'
+import InventoryTable from '../../component/inventoryTable/inventoryTable';
+// import ProductList from '../productList/ProductList';
 
 function PosInventory() {
   return (
@@ -76,30 +78,13 @@ function PosInventory() {
                                       <div className="mb-2 w-25 align-content-center">
                                         <button type="submit" id="addInventory">Add item</button>
                                       </div>
-                                       
+                                          
                                     </div>
                                     {/* <!--------------inventory input table ends here-----------------------> */}
                                     <h1 className="text-center my-4">Inventory Management here</h1>
-                                    <div className="table-container container-fluid d-flex justify-content-center w-100">
-                                      <div className="p-1 w-75">
-                                        <thead>
-                                          <table id="inventoryTable" className="display table table-striped table-hover w-100">
-                                            <tr>
-                                              <th>User ID</th>
-                                              <th>Entry date</th>
-                                              <th>Serial No.</th>
-                                              <th>Category</th>
-                                              <th>Description</th>
-                                              <th>Quantity</th>
-                                              <th>Buy Price</th>
-                                              <th>Sell Price</th>
-                                              <th>Profit</th>
-                                            </tr>                                       
-                                          <tbody>
-                                          </tbody>
-                                        </table>
-                                        </thead>
-                                      </div>
+                                    <div className="table-container flex-col container-fluid d-flex justify-content-center w-100">
+                                         <div> <InventoryTable /> </div>
+                                         {/* <div> <ProductList /> </div> */}
                                     </div>
                       </section>
                              {/* table contents ends here */}

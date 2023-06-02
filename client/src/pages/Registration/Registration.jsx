@@ -1,53 +1,354 @@
-import React from 'react'
+import apiService from '../../api-service/apiService';
+import '../Registration/Registration.css';
+import React, { useState } from 'react';
 
-function Registration() {
+function Registration({ handleSignUp }) {
+  const [errors, setErrors] = useState({});
+  const [isSignedUp, setSignUp] = useState(false);
+  const [formData, setFormData] = useState({
+    businessName: '',
+    firstName: '',
+    lastName: '',
+    userName: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    productList: []
+  });
+
+  const handleChange = event => {
+    const { name, value } = event.target;
+    setFormData(prevFormData => ({ ...prevFormData, [name]: value }));
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+
+    const emptyFields = Object.keys(formData).filter(field => formData[field] === '');
+    if (emptyFields.length > 0) {
+      const errorObj = emptyFields.reduce((errors, field) => {
+        errors[field] = 'This field is required';
+        return errors;
+      }, {});
+      setErrors(errorObj);
+      return;
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(formData.email)) {
+      setErrors(prevErrors => ({
+        ...prevErrors,
+        email: 'Invalid email format',
+      }));
+      return;
+    }
+ ////////////add user //// http://localhost:8080/users/signup
+    apiService
+      .post('/users/signup', formData)
+      .then(response => {
+          console.log(response);
+        if (!response.data.status) {
+          alert('Email already exists');
+          setErrors(prevErrors => ({
+            ...prevErrors,
+            email: 'Email already exists',
+
+            userName: 'Username already exists',
+          }));
+        }else {
+          setSignUp(true);
+          setTimeout(() => {
+            alert('Registration successful');
+            setErrors({});
+            setFormData({
+              businessName: '',
+              firstName: '',
+              lastName: '',
+              userName: '',
+              email: '',
+              password: '',
+              confirmPassword: ''
+            });
+            // handleSignUp(formData);
+          }, 500);
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  };
+
+  const errorHandler = name => {
+    if (errors[name]) {
+      return <div className="error">{errors[name]}</div>;
+    }
+    return null;
+  };
+
   return (
-        <>
-             <div>
-                    {/* registration form starts here */}
-                    <form id="registration-form">
-                                <div className="mb-3">
-                                  <div className="mb-1">
-                                    <label for="regBusinessName" className="form-label">Business name</label>
-                                    <input type="text" name="regBusinessName" className="form-control" id="regBusinessName" />
-                                    <span className="error" id="regBusinessNameError"></span>
-                                  </div>
-                                  <div className="mb-1">
-                                    <label for="regFirstName" className="form-label">Name</label>
-                                    <input type="text" name="regFirstName" className="form-control" id="regFirstName" />
-                                    <span className="error" id="regFirstNameError"></span>
-                                  </div>
-                                  <div className="mb-1">
-                                    <label for="regLastName" className="form-label">Last name</label>
-                                    <input type="text" name="regLastName" className="form-control" id="regLastName" />
-                                    <span className="error" id="regLastNameError"></span>
-                                  </div>
-                                  <div className="mb-1">
-                                    <label for="regUserName" className="form-label">Username</label>
-                                    <input type="text" name="regUserName" className="form-control" id="regUserName" />
-                                    <span className="error" id="regUserNameError"></span>
-                                  </div>
-                                  <div className="mb-1">
-                                    <label for="regEmailAd" className="form-label">Email address</label>
-                                    <input type="email" name="regEmailAd" className="form-control" id="regEmailAd"
-                                      aria-describedby="emailHelp" />
-                                    <span className="error" id="regEmailAdError"></span>
-                                  </div>
-                                  <div className="mb-1">
-                                    <label for="regPassword" className="form-label">Password</label>
-                                    <input type="password" name="regPassword" className="form-control" id="regPassword" />
-                                    <span className="error" id="regPasswordError"></span>
-                                  </div>
-                            
-                                 <button type="submit" id="registrationButton" className="btn btn-primary">Submit</button>
-                             </div>
-                                                     
-                                 
-                   </form>
-                     {/* registration form ends here */}
-             </div>
-        </>
-  )
+    <>
+      <div>
+        <div className="form">
+          <form onSubmit={handleSubmit}>
+            <div className="input-container">
+              <label>Business name</label>
+              <input
+                type="text"
+                name="businessName"
+                value={formData.businessName}
+                onChange={handleChange}
+              />
+              {errorHandler('businessName')}
+            </div>
+            <div className="input-container">
+              <label>First name</label>
+              <input
+                type="text"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+              />
+              {errorHandler('firstName')}
+            </div>
+            <div className="input-container">
+              <label>Last name</label>
+              <input
+                type="text"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+              />
+              {errorHandler('lastName')}
+            </div>
+            <div className="input-container">
+              <label>User name</label>
+              <input
+                type="text"
+                name="userName"
+                value={formData.userName}
+                onChange={handleChange}
+              />
+              {errorHandler('userName')}
+            </div>
+            <div className="input-container">
+              <label>Email</label>
+              <input
+                type="text"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+              />
+              {errorHandler('email')}
+            </div>
+            <div className="input-container">
+              <label>Password</label>
+              <input
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+              />
+              {errorHandler('password')}
+            </div>
+            <div className="input-container">
+              <label>Confirm Password</label>
+              <input
+                type="password"
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+              />
+              {errorHandler('confirmPassword')}
+            </div>
+            <div className="button-container">
+              <button className="signup-btn" type="submit">
+                Register
+              </button>
+            </div>
+          </form>
+        </div>
+        {isSignedUp && <p>Data is saved successfully</p>}
+      </div>
+    </>
+  );
 }
 
-export default Registration
+export default Registration;
+
+
+
+
+// import apiService from '../../api-service/apiService';
+// import '../Registration/Registration.css';
+// import React, { useState } from 'react';
+
+// function Registration({ handleSignUp }) {
+//   const [errors, setErrors] = useState({});
+//   const [isSignedUp, setSignUp] = useState(false);
+//   const [formData, setFormData] = useState({
+//     businessName: '',
+//     firstName: '',
+//     lastName: '',
+//     userName: '',
+//     email: '',
+//     password: '',
+//     confirmPassword: '',
+//     productList: []
+//   });
+
+//   const handleChange = event => {
+//     const { name, value } = event.target;
+//     setFormData(prevFormData => ({ ...prevFormData, [name]: value }));
+//   };
+
+//   const handleSubmit = event => {
+//     event.preventDefault();
+
+//     const emptyFields = Object.keys(formData).filter(field => formData[field] === '');
+//     if (emptyFields.length > 0) {
+//       const errorObj = emptyFields.reduce((errors, field) => {
+//         errors[field] = 'This field is required';
+//         return errors;
+//       }, {});
+//       setErrors(errorObj);
+//       return;
+//     }
+
+//     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//     if (!emailPattern.test(formData.email)) {
+//       setErrors(prevErrors => ({
+//         ...prevErrors,
+//         email: 'Invalid email format',
+//       }));
+//       return;
+//     }
+
+//     apiService
+//       .post('/users/signup', formData)
+//       .then(response => {
+//         if (!response.data.status) {
+//           alert('Username and email already exist');
+//           setErrors({
+//             userName: 'Username already exists',
+//             email: 'Email already exists',
+//           });
+//         } else {
+//           setSignUp(true);
+//           setTimeout(() => {
+//             alert('Registration successful');
+//             setErrors({});
+//             setFormData({
+//               businessName: '',
+//               firstName: '',
+//               lastName: '',
+//               userName: '',
+//               email: '',
+//               password: '',
+//               confirmPassword: ''
+//             });
+//             // handleSignUp(formData);
+//           }, 500);
+//         }
+//       })
+//       .catch(error => {
+//         console.error('Error:', error);
+//       });
+//   };
+
+//   const errorHandler = name => {
+//     if (errors[name]) {
+//       return <div className="error">{errors[name]}</div>;
+//     }
+//     return null;
+//   };
+
+//   return (
+//     <>
+//       <div>
+//         <div className="form">
+//           <form onSubmit={handleSubmit}>
+//             <div className="input-container">
+//               <label>Business name</label>
+//               <input
+//                 type="text"
+//                 name="businessName"
+//                 value={formData.businessName}
+//                 onChange={handleChange}
+//               />
+//               {errorHandler('businessName')}
+//             </div>
+//             <div className="input-container">
+//               <label>First name</label>
+//               <input
+//                 type="text"
+//                 name="firstName"
+//                 value={formData.firstName}
+//                 onChange={handleChange}
+//               />
+//               {errorHandler('firstName')}
+//             </div>
+//             <div className="input-container">
+//               <label>Last name</label>
+//               <input
+//                 type="text"
+//                 name="lastName"
+//                 value={formData.lastName}
+//                 onChange={handleChange}
+//               />
+//               {errorHandler('lastName')}
+//             </div>
+//             <div className="input-container">
+//               <label>User name</label>
+//               <input
+//                 type="text"
+//                 name="userName"
+//                 value={formData.userName}
+//                 onChange={handleChange}
+//               />
+//               {errorHandler('userName')}
+//             </div>
+//             <div className="input-container">
+//               <label>Email</label>
+//               <input
+//                 type="text"
+//                 name="email"
+//                 value={formData.email}
+//                 onChange={handleChange}
+//               />
+//               {errorHandler('email')}
+//             </div>
+//             <div className="input-container">
+//               <label>Password</label>
+//               <input
+//                 type="password"
+//                 name="password"
+//                 value={formData.password}
+//                 onChange={handleChange}
+//               />
+//               {errorHandler('password')}
+//             </div>
+//             <div className="input-container">
+//               <label>Confirm Password</label>
+//               <input
+//                 type="password"
+//                 name="confirmPassword"
+//                 value={formData.confirmPassword}
+//                 onChange={handleChange}
+//               />
+//               {errorHandler('confirmPassword')}
+//             </div>
+//             <div className="button-container">
+//               <button className="signup-btn" type="submit">Register</button>
+//             </div>
+//           </form>
+//         </div>
+//         {isSignedUp && <p>Data is saved successfully</p>}
+//       </div>
+//     </>
+//   );
+// }
+
+// export default Registration;
+
+
+  

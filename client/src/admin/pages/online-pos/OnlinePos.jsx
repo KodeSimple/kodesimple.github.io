@@ -1,21 +1,52 @@
-import React from 'react'
 import PosNavBarComp from '../../component/header/PosNavBarComp';
-import PosFooter from '../../component/footer/PosFooter'
-
+import PosFooter from '../../component/footer/PosFooter';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { setLoggedInUser } from '../../component/userReducer';
 
 function OnlinePos() {
-  return (
+  const loggedInUser = useSelector(state => state.loggedInUser);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-       <>
-          <div>
-              <div><PosNavBarComp /></div> 
-                   <main>
-                       <h1>Online POS here</h1>
-                   </main>
-              <div><PosFooter /></div>
+  useEffect(() => {
+    const storedUser = localStorage.getItem('loggedInUser');
+    const expirationTime = localStorage.getItem('loggedInUserExpiration');
+
+    if (storedUser && expirationTime && Date.now() < parseInt(expirationTime, 10)) {
+      dispatch(setLoggedInUser(storedUser));
+    } else {
+      localStorage.removeItem('loggedInUser');
+      localStorage.removeItem('loggedInUserExpiration');
+      navigate('/home');
+    }
+  }, [dispatch, navigate]);
+  return (
+    <>
+      <div>
+        <div>
+          <PosNavBarComp />
+        </div>
+        <main>
+          <div className="p-0 d-flex justify-content-center flex-column">
+            <div className="p-0 d-flex justify-content-center align-content-center">
+              <h1>Welcome to Online POS</h1>
+            </div>
+            <div className="p-0 d-flex justify-content-center align-content-center">
+              <h2>Logged in as user:</h2>
+            </div>
+            <div className="p-0 d-flex justify-content-center align-content-center">
+              <h3>{loggedInUser}</h3>
+            </div>
           </div>
-      </>
-  )
+        </main>
+        <div>
+          <PosFooter />
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default OnlinePos;

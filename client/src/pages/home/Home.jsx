@@ -12,26 +12,27 @@ import Footer from '../../components/footer/Footer'
 import scanningPackage from '../../components/resources/scanning-package.jpg';
 import scanningBox from '../../components/resources/close-up-scanning-box.jpg';
 import growthArrow from '../../components/resources/hand-holding-growth-arrow-with-coins.jpg';
-import responsive from '../../components/resources/responsive.png'
+import responsive from '../../components/resources/responsive.png';
 
 
 
 function Home() {
  
-
+          
   return (
     <> 
       {/* header section  starts here */}
                    <NavBarComp />
       {/* header section ends here */}
       <div className=''>
+
                           {/* registrtion form and sign in button starts here*/}
-      <div className="w-100">
+            <div className="w-100">
                    <div className="d-flex justify-content-end w-75 d-block container-fluid flex-row"> 
-                        <div className="px-3" ><SignIn /></div>
-                        <div className="px-3"><RegistrationForm /></div> 
-                    </div>      
-                </div>
+                          <div className="px-3" ><SignIn /></div>
+                          <div className="px-3"><RegistrationForm /></div> 
+                   </div>      
+            </div>
                            {/* home page body content starts here */}
         <div className="HomePagebackGroundColor">         
             <img src={mainPageBanner} alt="POS brochure" className="index-brochure w-100" fluid />
@@ -209,7 +210,7 @@ function Home() {
                       <section id="faqhome" className="pt-5"> 
                         <div className="text-center pt-5">
                           <div className="p-2">
-         s                   <h2>Frequently Asked Questions</h2>
+                           <h2>Frequently Asked Questions</h2>
                             <div className=" faq d-flex d-block w-100 justify-content-center 100"> {/* <!--- flex container main start tag----> */}  
                               <div className="p-0 w-75 faq-accordion">  {/* <!------firt item start tag------> */}
                                 {/* <!---------accrodion starts here---------> */}

@@ -1,37 +1,52 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import SubmittingRegistrationForm from '../Registration/SubmittingForm';
+import apiService from '../../api-service/apiService';
 
-function Login() {
-  return (
-        <>
-            <div>
-                {/* form starts here */}
-               <form id="credentials-validation-form">
-                   <div className="mb-3">
-                        <label for="exampleInputEmail1" className="form-label">Username</label>
-                        <input type="text" className="form-control" id="username" />
+function Login({data}) {
+      
+              //   code reference starts here
+     const [userData, setUserData] = useState([])
+     console.log(userData);
+        
+     useEffect(() => {
+           apiService.get('/users/getUsers')
+           .then(response => {
+             setUserData(response.data);        
+           })
 
-                    </div>
-                    <div className="mb-3">
-                       <label for="exampleInputPassword1" className="form-label">Password</label>
-                        <input type="password" className="form-control" id="password" />
-                  </div>
+           .catch(error => {
+             console.log(error);
+           })
+         }, []);
+            // code reference ends here
+
+    return (
+        <div className="app">
+            <div className="login-form">
                 
-                       {/* <!---------------Toast message ends here------------------------> */}
-                               <div className="toast align-items-center" id="myToast" role="alert" aria-live="assertive" aria-atomic="true">
-                                    <div className="d-flex">
-                                        <div className="toast-body">
-                                              Registration was successful, please login.
-                                        </div>
-                                         <button type="button" className="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-                                    </div>
-                                </div>
-                            {/* !---------Toast message ends here-----------------> */}
-                    <button type="submit" className="btn btn-primary" id="for-credentials-validation">Submit</button>
-                </form>
-                 {/* form ends here */}
+                <SubmittingRegistrationForm userData={userData} />
+            
             </div>
-       </>
-  )
+        </div>
+    );
 }
 
-export default Login
+export default Login;
+
+
+
+                //    code reference
+
+                // import LoginForm from './login.form';
+
+                // function Login({data}) {
+                //     return (
+                //         <div className="app">
+                //             <div className="login-form">
+                //                 <LoginForm userData={data} />
+                //             </div>
+                //         </div>
+                //     );
+                // }
+                
+                // export default Login;

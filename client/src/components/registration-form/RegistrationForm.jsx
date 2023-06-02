@@ -6,7 +6,6 @@ import Registration from '../../pages/Registration/Registration';
 
 function RegistrationButton() {
   const [show, setShow] = useState(false);
-
   const handleClosehandleRegistrationForm = () => setShow(false);
   const handleShowRegistrationForm = () => setShow(true);
 
@@ -23,7 +22,7 @@ function RegistrationButton() {
           <Offcanvas.Title>Registration Form</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-               <div> <Registration /></div>
+                      <div> <Registration /></div>
         </Offcanvas.Body>
       </Offcanvas>
     </>
