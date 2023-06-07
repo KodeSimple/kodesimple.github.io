@@ -1,15 +1,11 @@
 
   
-  .login-form {
-    max-width: 400px;
-    width: 100%;
-    padding: 1px;
-    border-radius: 5px;
-  }
   
-  .form {
+  /* .form {
     margin-bottom: 20px;
-  }
+    display: flex;
+    justify-content: center;
+  } */
   
   .input-container {
     margin-bottom: 5x;
@@ -59,7 +55,29 @@
   
   @media screen and (max-width: 480px) {
     .login-form {
-      max-width: 300px;
+      max-width: 375px;
       padding: 10px;
     }
+  }
+
+
+  /* spinner css */
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items:baseline;
+  }
+  
+  .spinner {
+    width: 50px; /* Adjust the size of the spinner */
+    height: 50px;
+    border: 5px solid #f3f3f3; /* Spinner color */
+    border-top: 5px solid #3498db; /* Spinner color */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }

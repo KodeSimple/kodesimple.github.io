@@ -1,75 +1,105 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { setLoggedInUser } from '../../component/userReducer';
+import apiService from '../../../api-service/apiService';
 import Table from 'react-bootstrap/Table';
+import '../inventoryTable/inventoryTable.css';
 
 function InventoryTable() {
-  const tableHeaders = [ 'Product ID', 'Entry date', 'Serial No.', 'Category', 'Description', 'Buy Price', 'Sell Price', 'Profit'];
-
-  const productList = [
-    { id: '01', entryDate: '2023-01-01', serialNo: '123456', category: 'Electronics', description: 'Smartphone', buyPrice: 500, sellPrice: 700, profit: 200 },
-    { id: '02', entryDate: '2023-01-02', serialNo: '789012', category: 'Appliances', description: 'Refrigerator', buyPrice: 1000, sellPrice: 1500, profit: 500 },
-    { id: '03', entryDate: '2023-01-03', serialNo: '345678', category: 'Furniture', description: 'Sofa', buyPrice: 800, sellPrice: 1200, profit: 400 },
+  const tableHeaders = [
+    // 'User ID',
+    'Entry date',
+    'Serial No.',
+    'Category',
+    'Description',
+    'QTY',
+    'Buy Price',
+    'Sell Price',
+    'Profit',
   ];
 
-//   const [selectedProductId, setSelectedProductId] = useState('');
+  const [userProducts, setUserProducts] = useState([]);
+  const loggedInUser = useSelector((state) => state.loggedInUser);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-//   const handleEdit = (productId) => {
-//     setSelectedProductId(productId);
-//     const productIndex = productList.findIndex((product) => product.id === productId);
-//     if (productIndex !== -1) {
-//       // Implement your edit logic here using the productIndex
-//       console.log(`Edit product with ID: ${productId}`);
-//       console.log('Product Details:', productList[productIndex]);
-//     }
-//   };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const storedUser = localStorage.getItem('loggedInUser');
+        const expirationTime = localStorage.getItem('loggedInUserExpiration');
 
-//   const handleDelete = (productId) => {
-//     setSelectedProductId(productId);
-//     const productIndex = productList.findIndex((product) => product.id === productId);
-//     if (productIndex !== -1) {
-//       // Implement your delete logic here using the productIndex
-//       console.log(`Delete product with ID: ${productId}`);
-//       console.log('Product Details:', productList[productIndex]);
-//     }
-//   };
+        if (
+          storedUser &&
+          expirationTime &&
+          Date.now() < parseInt(expirationTime, 10)
+        ) {
+          dispatch(setLoggedInUser(storedUser));
+
+          // Send request to server to fetch user product list
+          const response = await apiService.post('users/productList', {
+            userName: loggedInUser,
+          });
+
+          if (Array.isArray(response.data)) {
+            setUserProducts(response.data);
+          } else {
+            console.error('Received response data is not an array:', response.data);
+            setUserProducts([]);
+          }
+        } else {
+          localStorage.removeItem('loggedInUser');
+          localStorage.removeItem('loggedInUserExpiration');
+          navigate('/home');
+        }
+      } catch (error) {
+        console.error('Error occurred while fetching user products:', error);
+        setUserProducts([]);
+      }
+    };
+
+    fetchData();
+  }, [dispatch, navigate, loggedInUser]);
 
   return (
-    <div>
-      <Table rresponsive="sm" striped="columns">
-        <thead>
-          <tr>
-            <th>#</th>
-            {tableHeaders.map((header, index) => (
-              <th key={index}>{header}</th>
-            ))}
-            {/* <th>Action</th> */}
-          </tr>
-        </thead>
-        <tbody>
-          {productList.map((data, index) => (
-            <tr key={index}>
-              <td>{index + 1}</td>
-              <td className='text-center'>{data.id}</td>
-              <td>{data.entryDate}</td>
-              <td>{data.serialNo}</td>
-              <td>{data.category}</td>
-              <td>{data.description}</td>
-              <td>{data.buyPrice}</td>
-              <td>{data.sellPrice}</td>
-              <td>{data.profit}</td>
-              {/* <td>
-                <button onClick={() => handleEdit(data.id)}>Edit</button>
-                <button onClick={() => handleDelete(data.id)}>Delete</button>
-              </td> */}
+    <>
+      <div>
+        <Table responsive="sm" striped>
+          <thead>
+            <tr>
+              <th>#</th>
+              {tableHeaders.map((header, index) => (
+                <th key={index}>{header}</th>
+              ))}
             </tr>
-          ))}
-        </tbody>
-      </Table>
-      {/* {selectedProductId && (
-        <div>
-          Selected Product ID: {selectedProductId}
-        </div>
-      )} */}
-    </div>
+          </thead>
+          <tbody>
+            {loggedInUser && (
+              <tr>
+                <td colSpan={tableHeaders.length + 1}>
+                  <h5>Good day! {loggedInUser}</h5>
+                </td>
+              </tr>
+            )}
+            {userProducts.map((data, index) => (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td className="hidden-cell">{data.userId}</td>
+                <td>{data.entryDate}</td>
+                <td>{data.serialNo}</td>
+                <td>{data.category}</td>
+                <td>{data.itemDescription}</td>
+                <td>{data.qty}</td>
+                <td>{parseFloat(data.buyPrice).toFixed(2)}</td>
+                <td>{parseFloat(data.sellPrice).toFixed(2)}</td>
+                <td>{parseFloat(data.profit).toFixed(2)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </div>
+    </>
   );
 }
 
@@ -79,3 +109,18 @@ export default InventoryTable;
 
 
 
+
+
+
+
+// apiService
+// .post('/users/productList', { userName: loggedInUser })
+// .then(res => {
+//   // console.log(res);
+//   const response = res.data; // Assuming the response is already in JSON format
+//   setUserProducts(response); // Update userProducts state with the response data
+// })
+// .catch(error => {
+//   console.log(error);
+//   setUserProducts([]);
+// });

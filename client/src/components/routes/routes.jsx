@@ -12,35 +12,10 @@ import PosInventory from '../../admin/pages/inventory/PosInventory';
 import Sales from '../../admin/pages/sales/PosSales';
 import User from '../../admin/pages/user/PosUser';
 import PosContact from '../../admin/pages/contact/PosContact';
-// import axios from 'axios';
-// import Login from '../sign-in/SigIn';
-// import ProductList from '../src/components/sample/ProductList';
-// import { Navigate } from 'react-router-dom';
+
 
 function AppRoutes() {
-
-          // const [isLoggedIn, setLoggedIn] = useState(false);
-          // const [userId, setUserId] = useState(null);
-        
-          // console.log(isLoggedIn);
-          // const handleLogin = async (username, password) => {
-          //   try {
-          //     // Send login request to the server and check if credentials are valid
-          //     const response = await axios.post('/users/login', { username, password });
-          //     if (response.data.status) {
-          //       // Login successful
-          //       setLoggedIn(true);
-          //       setUserId(response.data.userId);
-          //       console.log(response);
-          //     }
-          //   } catch (error) {
-          //     // Handle login error
-          //     console.log(error);
-          //   }
-           
-          // };
-            
-        
+     
      return (
        <>
            <Routes>
@@ -58,14 +33,6 @@ function AppRoutes() {
              <Route path="/sales" element={<Sales />} />
              <Route path="/pos-user" element={<User />} />
              <Route path="/pos-contact" element={<PosContact />} />
-                     {/* inserted new route */}
-             {/* <Route path="/login">
-                   {isLoggedIn ? <Navigate to="/products" /> : <Login handleLogin={handleLogin} />}
-             </Route>
-             <Route path="/products">
-                   {isLoggedIn ? <ProductList userId={userId} /> : <Navigate to="/login" />}
-             </Route>
-             <Route path="/" element={<Navigate to="/login" />} /> */}
         </Routes>
     </>
   );

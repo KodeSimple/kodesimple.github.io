@@ -2,13 +2,13 @@
 .homeField{background-color: #14241d};
 
 /* ------Body Media query starts here---------*/
-@media (max-width: 400px) {
+@media (max-width: 375px) {
     .features-responses {
         flex-direction: column !important;
     }
   }
   
-  @media (max-width: 500px) and (min-width: 401px) {
+  @media (max-width: 500px) and (min-width: 376px) {
     .features-responses {
       flex-direction: column !important;
       

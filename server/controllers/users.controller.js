@@ -1,100 +1,153 @@
-let usersModel = require('../models/users.model');
-// 
+const usersModel = require('../models/users.mongo');
 
-function getAllUsers(req, res) {
-    res.status(200).json(usersModel);
-    
+/////-----------------get all users block scope starts here------------//////////
+async function getAllUsers(req, res) {
+  try {
+    const allUsers = await usersModel.find();
+    res.status(200).json(allUsers);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
 }
 
-function changePassword(req, res) {
-    /* 
-        This destructured variable declartion is equivalent to this:
+async function productList(req, res) {
+  try {
+    const { userName } = req.body;
+    const user = await usersModel.findOne({ userName: userName });
 
-        const username = req.body.username
-        const password = req.body.password 
-    */
-    const { email, password } = req.body; // Input from postman
-
-    // constant variables to hold messages
-    const USER_NOT_FOUND = 'User does not exist';
-    const PASSWORD_IS_EMPTY = 'Password cannot be empty';
-    const PASSWORD_UPDATED_MSG = username => `User ${username}'s password has been updated`;
-    
-    // finds the username that matches the username supplied from POSTMAN input.
-    const user = usersModel.find(user => user.username === username);
-    
-    if (user && password) {
-        user.password = password;
-        return res.send(PASSWORD_UPDATED_MSG(username));
-    } else {
-        return !password ? res.send(PASSWORD_IS_EMPTY) : res.send(USER_NOT_FOUND);
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
     }
+
+    const productList = user.productList;
+    res.status(200).json(productList);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+}
+/////-----------------get all users block scope ends here------------//////////
+///////--------------------add product block scope starts here/--------------------///////////
+async function addProduct(req, res) {
+  const { userId, entryDate, serialNo, category, itemDescription, qty, buyPrice, sellPrice } = req.body;
+  try {
+    const user = await usersModel.findOne({ userName: userId });
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    const profit = (sellPrice - buyPrice) * qty;
+    const newProduct = {
+      userId: userId,
+      entryDate: entryDate,
+      serialNo: serialNo,
+      category: category,
+      itemDescription: itemDescription,
+      qty: qty,
+      buyPrice: buyPrice,
+      sellPrice: sellPrice,
+      profit: profit,
+    };
+
+    user.productList.push(newProduct); // Add the new product to the user's productList array
+    await user.save();
+
+    res.status(200).json({ message: 'Item added successfully' });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
 }
 
-function addUser(req, res) {
-    // destructured the body from the request
+/////------------------------end of addPoduct block scope---------------------/////////
+/////-----------------change password user block scope starts here------------//////////
+async function changePassword(req, res) {
+  const { userName, password } = req.body;
 
-    const { businessName, firstName, lastName, userName, email, password, confirmPassword } = req.body;
-
-    if (password !== confirmPassword) {
-        return res.status(200).json({ status: false, errorName: 'confirmPassword', message: 'Password does not match' });
-    }
-
-    if (!email) {
-        return res.status(200).json({ status: false, errorName: 'email', message: 'Email cannot be empty' }); 
-    } else if (!password) {
-        return res.status(200).json({ status: false, errorName: 'password', message: 'Password cannot be empty' });
-    } else if (!firstName) {
-        return res.status(200).json({ status: false, errorName: 'firstName', message: 'First name cannot be empty' });
-    } else if (!lastName) {
-        return res.status(200).json({ status: false, errorName: 'lastName', message: 'Last name cannot be empty' });
-    }
-    
-      
-    const duplicateEmailAndUsername = usersModel.find(user => user.email === email || user.userName === userName);
-    
-    if (!duplicateEmailAndUsername ) {
-        console.log(usersModel);
-
-
-        usersModel.push({ businessName, firstName, lastName, userName, email, password, confirmPassword });
-        res.status(200).json({ status: true, message: 'User successfully registered' });
-        
-    } else {
-        return res.status(200).json({ message: 'Username or Email already exists' });
-    }
-}
-
-console.log(usersModel);
-function login(req, res) {
-    /* 
-        This variable is equivalent to:
-        req.body.email and req.body.password
-
-        const email = req.body.email;
-        const password = req.body.password;
-    */
-    const { userName, password } = req.body;
-
-    const user = usersModel.find((user) => user.userName === userName && user.password === password);
+  try {
+    const user = await usersModel.findOne({ userName: userName });
 
     if (user) {
-        res.status(200).json({
-            status: true,
-            message: 'Login Successfull'
-        });
+      user.password = password;
+      await user.save();
+      res.send(`User ${userName}'s password has been updated`);
     } else {
-        res.status(200).json({
-            status: false,
-            message: 'Login failed, wrong credentials'
-        })
+      res.status(404).send('User not found');
     }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
 }
+/////-----------------change password user block scope ends here------------//////////
+/////-----------------addNew user block scope starts here-------------------------------------//////////
+async function addUser(req, res) {
+  const { businessName, firstName, lastName, userName, email, password, confirmPassword, productList, salesList, remainingProduct } = req.body;
 
+  if (password !== confirmPassword) {
+    return res.status(200).json({ status: false, errorName: 'confirmPassword', message: 'Password does not match' });
+  }
 
+  if (!email || !password || !firstName || !lastName) {
+    return res.status(200).json({ status: false, errorName: 'validation', message: 'Invalid user data' });
+  }
+
+  const existingUser = await usersModel.findOne({ $or: [{ email: email }, { userName: userName }] });
+
+  if (existingUser) {
+    return res.status(200).json({ status: false, errorName: 'emailExist', message: 'Username or Email already exists' });
+  }
+
+  const newUser = new usersModel({
+    businessName,
+    firstName,
+    lastName,
+    userName,
+    email,
+    password,
+    confirmPassword,
+    productList: productList || [],
+    salesList: salesList || [],
+    remainingProduct: remainingProduct|| [],
+  });
+
+  await newUser.save();
+  res.status(200).json({ status: true, message: 'User successfully registered' });
+}
+//////-----------------------end of addUser block--------------------------------/////////
+/////-------------------log in block scoope code starts here---------------------////////
+async function login(req, res) {
+  const { userName, password } = req.body;
+
+  try {
+    const user = await usersModel.findOne({ userName: userName, password: password });
+
+    if (user) {
+      res.status(200).json({
+        status: true,
+        message: 'Login successful',
+        userName: user.userName,
+      });
+    } else {
+      res.status(200).json({
+        status: false,
+        message: 'Login failed, wrong credentials',
+      });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+}
+/////-------------------log in block scoope code ends here---------------------////////
 module.exports = {
-    getAllUsers,
-    changePassword,
-    addUser,
-    login
+  getAllUsers,
+  changePassword,
+  addUser,
+  login,
+  productList,
+  addProduct,
 };
+

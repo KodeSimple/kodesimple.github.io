@@ -1,11 +1,11 @@
-.registrationButton{
+.AddItemButton{
     /* max-width: 10px; */
     background-color: #e9f3f1;
     border: 2px solid #036384;
     border-radius: 10px;
     color: rgb(17, 23, 26);
     cursor: pointer;
-    font-size: 16px;
+    font-size: 12px;
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 10px;
@@ -21,14 +21,8 @@
          sans-serif; */
          
      }
-  
-  
-  
-  .registrationButton:hover {
-    background-color: #036384;
-    border: 2px solid #036384;
-  }
-
-  /* .registrationButton{
-            display:none
-           } */
+    
+       .AddItemButton:hover{
+        background-color: #036384;
+        border: 2px solid #036384;
+      }

@@ -3,6 +3,8 @@ import PosNavBarComp from '../../component/header/PosNavBarComp';
 import PosFooter from '../../component/footer/PosFooter'
 
 function NoPage() {
+
+           
   return (
     <>   
               {/* header section  starts here */}

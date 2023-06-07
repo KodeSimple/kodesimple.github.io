@@ -1,10 +1,12 @@
 import apiService from '../../api-service/apiService';
 import '../Registration/Registration.css';
 import React, { useState } from 'react';
+// import { Spinner } from 'react-bootstrap';
 
-function Registration({ handleSignUp }) {
+function Registration({ handleShowSignIn }) {
+  const [isRegistrationSuccessful, setRegistrationSuccessful] = useState(false);
+  const [isLoading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
-  const [isSignedUp, setSignUp] = useState(false);
   const [formData, setFormData] = useState({
     businessName: '',
     firstName: '',
@@ -22,8 +24,8 @@ function Registration({ handleSignUp }) {
   };
 
   const handleSubmit = event => {
+    setLoading(true);
     event.preventDefault();
-
     const emptyFields = Object.keys(formData).filter(field => formData[field] === '');
     if (emptyFields.length > 0) {
       const errorObj = emptyFields.reduce((errors, field) => {
@@ -42,23 +44,20 @@ function Registration({ handleSignUp }) {
       }));
       return;
     }
- ////////////add user //// http://localhost:8080/users/signup
+
     apiService
       .post('/users/signup', formData)
       .then(response => {
-          console.log(response);
         if (!response.data.status) {
           alert('Email already exists');
           setErrors(prevErrors => ({
             ...prevErrors,
             email: 'Email already exists',
-
             userName: 'Username already exists',
           }));
-        }else {
-          setSignUp(true);
+        } else {
+          setRegistrationSuccessful(true);
           setTimeout(() => {
-            alert('Registration successful');
             setErrors({});
             setFormData({
               businessName: '',
@@ -69,8 +68,12 @@ function Registration({ handleSignUp }) {
               password: '',
               confirmPassword: ''
             });
-            // handleSignUp(formData);
-          }, 500);
+            handleShowSignIn();
+            console.log(isLoading);
+           
+
+            alert('Registration successful proceed to login')
+          }, 200);
         }
       })
       .catch(error => {
@@ -88,6 +91,9 @@ function Registration({ handleSignUp }) {
   return (
     <>
       <div>
+        <div>
+          {isRegistrationSuccessful && handleShowSignIn()}
+        </div>
         <div className="form">
           <form onSubmit={handleSubmit}>
             <div className="input-container">
@@ -160,14 +166,14 @@ function Registration({ handleSignUp }) {
               />
               {errorHandler('confirmPassword')}
             </div>
-            <div className="button-container">
-              <button className="signup-btn" type="submit">
-                Register
-              </button>
-            </div>
+
+                    <div className="button-container">
+                       <button className="signup-btn" type="submit">
+                           Register
+                       </button>
+                  </div>   
           </form>
         </div>
-        {isSignedUp && <p>Data is saved successfully</p>}
       </div>
     </>
   );
@@ -176,15 +182,15 @@ function Registration({ handleSignUp }) {
 export default Registration;
 
 
-
-
 // import apiService from '../../api-service/apiService';
 // import '../Registration/Registration.css';
 // import React, { useState } from 'react';
+// import handleShowSignIn from '../../components/drawer/offCanvas';
 
 // function Registration({ handleSignUp }) {
+//   const [isRegistrationSuccessful, setRegistrationSuccessful] = useState(false);
+//   const [isLoading, setLoading] = useState(false);
 //   const [errors, setErrors] = useState({});
-//   const [isSignedUp, setSignUp] = useState(false);
 //   const [formData, setFormData] = useState({
 //     businessName: '',
 //     firstName: '',
@@ -202,8 +208,8 @@ export default Registration;
 //   };
 
 //   const handleSubmit = event => {
+//     setLoading(true);
 //     event.preventDefault();
-
 //     const emptyFields = Object.keys(formData).filter(field => formData[field] === '');
 //     if (emptyFields.length > 0) {
 //       const errorObj = emptyFields.reduce((errors, field) => {
@@ -227,15 +233,15 @@ export default Registration;
 //       .post('/users/signup', formData)
 //       .then(response => {
 //         if (!response.data.status) {
-//           alert('Username and email already exist');
-//           setErrors({
-//             userName: 'Username already exists',
+//           alert('Email already exists');
+//           setErrors(prevErrors => ({
+//             ...prevErrors,
 //             email: 'Email already exists',
-//           });
+//             userName: 'Username already exists',
+//           }));
 //         } else {
-//           setSignUp(true);
+//           setRegistrationSuccessful(true);
 //           setTimeout(() => {
-//             alert('Registration successful');
 //             setErrors({});
 //             setFormData({
 //               businessName: '',
@@ -246,8 +252,9 @@ export default Registration;
 //               password: '',
 //               confirmPassword: ''
 //             });
-//             // handleSignUp(formData);
-//           }, 500);
+//             Click={handleShowSignIn}
+//             console.log(isLoading);
+//           }, 200);
 //         }
 //       })
 //       .catch(error => {
@@ -265,6 +272,9 @@ export default Registration;
 //   return (
 //     <>
 //       <div>
+//              <div>
+//               {isRegistrationSuccessful && <handleShowSignIn />}
+//             </div>
 //         <div className="form">
 //           <form onSubmit={handleSubmit}>
 //             <div className="input-container">
@@ -338,17 +348,21 @@ export default Registration;
 //               {errorHandler('confirmPassword')}
 //             </div>
 //             <div className="button-container">
-//               <button className="signup-btn" type="submit">Register</button>
+//                 <button className="signup-btn" type="submit">
+//                 Register
+//               </button>
+
 //             </div>
 //           </form>
 //         </div>
-//         {isSignedUp && <p>Data is saved successfully</p>}
 //       </div>
 //     </>
 //   );
 // }
 
 // export default Registration;
+
+
 
 
   

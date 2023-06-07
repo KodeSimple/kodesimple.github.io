@@ -3,8 +3,8 @@ import '../home/Home.css';
 import mainPageBanner from '../../components/resources/mp2banner.png'
 import pricing from '../../components/resources/pricing.png'
 import Accordion from 'react-bootstrap/Accordion';
-import RegistrationForm from '../../components/registration-form/RegistrationForm';
-import SignIn from '../../components/sign-in/SigIn';
+// import RegistrationForm from '../../components/registration-form/RegistrationForm';
+import SignInRegistrationButton from '../../components/drawer/offCanvas';
 import About from '../about/About';
 import Faq from '../faq/Faq';
 import NavBarComp from '../../components/header/NavBarComp';
@@ -15,22 +15,19 @@ import growthArrow from '../../components/resources/hand-holding-growth-arrow-wi
 import responsive from '../../components/resources/responsive.png';
 
 
-
 function Home() {
  
           
   return (
     <> 
-      {/* header section  starts here */}
-                   <NavBarComp />
-      {/* header section ends here */}
+                                          <NavBarComp />
       <div className=''>
 
                           {/* registrtion form and sign in button starts here*/}
             <div className="w-100">
                    <div className="d-flex justify-content-end w-75 d-block container-fluid flex-row"> 
-                          <div className="px-3" ><SignIn /></div>
-                          <div className="px-3"><RegistrationForm /></div> 
+                          <div className="pt-2" ><SignInRegistrationButton /></div>
+                          {/* <div className="px-3"><RegistrationForm /></div>  */}
                    </div>      
             </div>
                            {/* home page body content starts here */}
@@ -203,8 +200,9 @@ function Home() {
                                     <div className="p-0 d-flex justify-content-center">
                                            <a className="hrefLink" href="/about" onClick={About}>Learn more</a>
                                     </div>
+                              
                     </section>
-                                    {/* about section ends here */}
+                    {/* about section ends here */}
                    {/* end of about us section */}
                    {/* <!-- FAQ section starts here --> */}
                       <section id="faqhome" className="pt-5"> 
