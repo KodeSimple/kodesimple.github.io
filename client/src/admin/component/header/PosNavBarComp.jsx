@@ -3,13 +3,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import posBrandLogo from '../../resources/mp2-brand-logo.jpg';
-// import Logout from '../../component/logoutButton/Logout';
+import Logout from '../../component/logoutButton/Logout';
 import { Container } from 'react-bootstrap';
 
 function PosNavBarComp() {
   return (
     <>
-              <div className="navBarColor d-flex justify-content-around container-fluid ">
+              <div className="navBarColor d-flex justify-content-around flex-wrap container-fluid ">
                         <div className="px-5 d-flex">
                             <Container fluid>
                                <Navbar className="custom-navbar ml-auto " expand="lg">
@@ -30,7 +30,7 @@ function PosNavBarComp() {
                             </Container>
                          </div>                 
                          <div className="self-align-center pt-5">
-                             {/* <Logout /> */}
+                             <Logout />
                          </div>                                                                             
                </div>
     </>

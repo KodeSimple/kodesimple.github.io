@@ -3,8 +3,7 @@
             import React, { useEffect } from 'react';
             import { useSelector, useDispatch } from 'react-redux';
             import { useNavigate } from 'react-router-dom';
-            import { setLoggedInUser } from '../../component/userReducer';
-            import LogoutButton from '../../component/logoutButton/Logout';
+            import { setLoggedInUser } from '../../component/userReducer'
            
            function OnlinePos() {
              const loggedInUser = useSelector(state => state.loggedInUser);
@@ -32,23 +31,22 @@
                      <PosNavBarComp />
                    </div>
                    <main>
-                     <div className="text-end w-100 pt-3">
-                          <div className="w-100">
-                                 <LogoutButton />   
+                        <div className="text-end w-100 pt-3">
+                             <div className="w-100">
+                                 {/* <LogoutButton />    */}
                           </div>              
-                     </div>
-                       
-                     <div className="p-0 d-flex justify-content-center flex-column">
-                       <div className="p-0 d-flex justify-content-center align-content-center">
-                         <h1>Welcome to Online POS</h1>
-                       </div>
-                       <div className="p-0 d-flex justify-content-center align-content-center">
-                         <h2>Logged in as user:</h2>
-                       </div>
-                       <div className="p-0 d-flex justify-content-center align-content-center">
-                         <h3>{loggedInUser}</h3>
-                       </div>
-                     </div>
+                         </div>  
+                         <div className="p-0 d-flex justify-content-center flex-column">
+                            <div className="p-0 d-flex justify-content-center align-content-center">
+                                 <h1>Welcome to Online POS</h1>
+                            </div>
+                             <div className="p-0 d-flex justify-content-center align-content-center">
+                                 <h2>Logged in as user:</h2>
+                            </div>
+                            <div className="p-0 d-flex justify-content-center align-content-center">
+                                <h3>{loggedInUser}</h3>
+                            </div>
+                        </div>
                    </main>
                    <div>
                      <PosFooter />

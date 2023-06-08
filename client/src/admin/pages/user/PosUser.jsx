@@ -6,13 +6,12 @@ import { useNavigate } from 'react-router-dom';
 import { setLoggedInUser } from '../../component/userReducer';
 
 function PosUser() {   
-            // 24 hour login duration code
+            //////////////////////redux/reducer log in and time durtion code starts here///////////////////////// 
             const loggedInUser = useSelector(state => state.loggedInUser);
             const dispatch = useDispatch();
             const navigate = useNavigate();
             console.log(loggedInUser);
-          
-          
+        
             useEffect(() => {
               const storedUser = localStorage.getItem('loggedInUser');
               const expirationTime = localStorage.getItem('loggedInUserExpiration');
@@ -25,6 +24,8 @@ function PosUser() {
                 navigate('/home');
               }
             }, [dispatch, navigate]);
+          //////////////////////redux/reducer log in and time durtion code ends here///////////////////////// 
+
   return (
        <>
           <div>

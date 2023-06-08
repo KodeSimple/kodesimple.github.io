@@ -1,31 +1,21 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setLoggedInUser } from '../../component/userReducer';
 import { Spinner } from 'react-bootstrap';
+// import '../logoutButton/Logout.css';
 
 function LogoutButton() {
-  const loggedInUser = useSelector(state => state.loggedInUser);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isLoading, setLoading] = useState(false);
 
   const handleLogout = () => {
-    const storedUser = localStorage.getItem('loggedInUser');
-    const expirationTime = localStorage.getItem('loggedInUserExpiration');
-
-    if (storedUser && expirationTime && Date.now() < parseInt(expirationTime, 10)) {
-      //  alert(storedUser);
-      dispatch(setLoggedInUser(storedUser));
-    } else {
-      alert(storedUser);
-      setLoading(true); // Set loading state to true
-      dispatch(setLoggedInUser(''));
-      console.log(loggedInUser);
-      localStorage.removeItem('loggedInUser');
-      localStorage.removeItem('loggedInUserExpiration');
-      navigate('/home');
-    }
+    setLoading(true); // Set loading state to true
+    dispatch(setLoggedInUser(null)); // Clear the loggedInUser state
+    localStorage.removeItem('loggedInUser');
+    localStorage.removeItem('loggedInUserExpiration');
+    navigate('/home');
   };
 
   return (
@@ -42,7 +32,7 @@ function LogoutButton() {
       ) : (
         // Show the Logout button if loading is false
         <div className="w-75">
-          <a className="hrefLink" href="/home" onClick={handleLogout}>
+          <a className="hrefLink text-decoration-none text-white" href="/home" onClick={handleLogout}>
             Logout
           </a>
         </div>
@@ -52,4 +42,5 @@ function LogoutButton() {
 }
 
 export default LogoutButton;
+
 

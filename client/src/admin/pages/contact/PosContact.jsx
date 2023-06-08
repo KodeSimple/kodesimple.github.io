@@ -10,9 +10,7 @@ function PosContact() {
                   const loggedInUser = useSelector(state => state.loggedInUser);
                   const dispatch = useDispatch();
                   const navigate = useNavigate();
-                  console.log(loggedInUser);
-                
-                
+              //////////////////////redux log in time durtion code starts here/////////////////////////  
                   useEffect(() => {
                     const storedUser = localStorage.getItem('loggedInUser');
                     const expirationTime = localStorage.getItem('loggedInUserExpiration');
@@ -25,6 +23,7 @@ function PosContact() {
                       navigate('/home');
                     }
                   }, [dispatch, navigate]);
+               //////////////////////redux log in time durtion code ends here///////////////////////// 
 
               
   return (
@@ -32,7 +31,10 @@ function PosContact() {
          <div>
              <div><PosNavBarComp /></div> 
                   <main>
-                      <h1>Contact here</h1>
+                      <div className="text-center">
+                           <h1>Contact here</h1>
+                           <h2>{loggedInUser}</h2>
+                       </div>
                   </main>
              <div><PosFooter /></div>
          </div>

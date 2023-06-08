@@ -56,10 +56,49 @@ const usersSchema = new mongoose.Schema({
     },
   ],
   salesList: [{
+    salesId: {
+      type: String,
+    },
+    serialNo: {
+      type: String,
+    },
+    category: {
+      type: String,
+    },
+    itemDescription: {
+      type: String,
+    },
+    qty: {
+      type: String,
+    },
+    sellPrice: {
+      type: String,
+    },
+    totalPrice: {
+      type: String,
+    },
 
   }],
-  remainingProduct: [{
+  remainingProduct: [{ 
+    userId: {
+      type: String,
+    },
 
+    serialNo: {
+      type: String,
+    },
+    category: {
+      type: String,
+    },
+    itemDescription: {
+      type: String,
+    },
+    qty: {
+      type: String,
+    },
+    sellPrice: {
+      type: String,
+    },
   }],
 });
 
