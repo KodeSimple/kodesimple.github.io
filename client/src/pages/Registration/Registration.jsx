@@ -18,10 +18,14 @@ function Registration({ handleShowSignIn }) {
     productList: []
   });
 
+    // Error handling
   const handleChange = event => {
     const { name, value } = event.target;
     setFormData(prevFormData => ({ ...prevFormData, [name]: value }));
-  };
+  
+    // Clear the corresponding error when typing
+    setErrors(prevErrors => ({ ...prevErrors, [name]: '' }));
+        };
 
   const handleSubmit = event => {
     setLoading(true);

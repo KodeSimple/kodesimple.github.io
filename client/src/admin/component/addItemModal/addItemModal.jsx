@@ -17,18 +17,10 @@ function AddItemModal() {
       </Button>
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Add new product form</Modal.Title>
+        <Modal.Header closeButton className="modalHeader">
+          <Modal.Title>Add new product</Modal.Title>
         </Modal.Header>
-        <Modal.Body><AddItemForm /></Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            close
-          </Button>
-          {/* <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button> */}
-        </Modal.Footer>
+        <Modal.Body className="modalBody"><AddItemForm /></Modal.Body>
       </Modal>
     </>
   );

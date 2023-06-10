@@ -38,10 +38,10 @@ function AuthenticationButton() {
       </div>
 
       <Offcanvas show={showSignIn} onHide={handleCloseSignIn} scroll={true} backdrop={true}>
-        <Offcanvas.Header closeButton>
+        <Offcanvas.Header closeButton className="offCanvasHeader">
           <Offcanvas.Title>Sign In</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
+        <Offcanvas.Body className="offCanvasBody">
           <div>
             <LogIn />
           </div>
@@ -49,10 +49,10 @@ function AuthenticationButton() {
       </Offcanvas>
 
       <Offcanvas show={showRegistration} onHide={handleCloseRegistration} scroll={true} backdrop={true}>
-        <Offcanvas.Header closeButton>
+        <Offcanvas.Header closeButton className="offCanvasHeader">
           <Offcanvas.Title>Registration Form</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
+        <Offcanvas.Body className="offCanvasBody">
           <div>
             <Registration handleShowSignIn={handleShowSignIn} />
           </div>

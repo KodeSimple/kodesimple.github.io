@@ -35,10 +35,10 @@
     text-align: right;
   }
   
-  .login-btn {
+  .button-container .login-btn {
+    background-color: rgb(84, 96, 99);
     padding: 10px 20px;
-    background-color: #4caf50;
-    color: white;
+    color: rgb(234, 239, 241);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -49,8 +49,8 @@
   }
   
   .login-btn:hover {
-    background-color: #45a049;
     transform: scale(1.05);
+  background-color: rgb(89, 135, 141);
   }
   
   @media screen and (max-width: 480px) {

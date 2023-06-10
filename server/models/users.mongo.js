@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 
 const usersSchema = new mongoose.Schema({
-
-
   businessName: {
     type: String,
   },
@@ -42,7 +40,7 @@ const usersSchema = new mongoose.Schema({
         type: String,
       },
       qty: {
-        type: String,
+        type: Number, // Change the type to Number
       },
       buyPrice: {
         type: String,
@@ -55,54 +53,208 @@ const usersSchema = new mongoose.Schema({
       },
     },
   ],
-  salesList: [{
-    salesId: {
-      type: String,
+  salesList: [
+    {
+      salesId: {
+        type: String,
+      },
+      serialNo: {
+        type: String,
+      },
+      category: {
+        type: String,
+      },
+      itemDescription: {
+        type: String,
+      },
+      qty: {
+        type: Number, // Change the type to Number
+      },
+      sellPrice: {
+        type: String,
+      },
+      totalPrice: {
+        type: String,
+      },
     },
-    serialNo: {
-      type: String,
+  ],
+  remainingProduct: [
+    {
+      userId: {
+        type: String,
+      },
+      serialNo: {
+        type: String,
+      },
+      category: {
+        type: String,
+      },
+      itemDescription: {
+        type: String,
+      },
+      qty: {
+        type: Number, // Change the type to Number
+      },
+      sellPrice: {
+        type: String,
+      },
     },
-    category: {
-      type: String,
+  ],
+  temporaryProduct: [
+    {
+      userName: {
+        type: String,
+      },
+      serialNo: {
+        type: String,
+      },
+      category: {
+        type: String,
+      },
+      itemDescription: {
+        type: String,
+      },
+      qty: {
+        type: Number, // Change the type to Number
+      },
+      sellPrice: {
+        type: String,
+      },
     },
-    itemDescription: {
-      type: String,
-    },
-    qty: {
-      type: String,
-    },
-    sellPrice: {
-      type: String,
-    },
-    totalPrice: {
-      type: String,
-    },
-
-  }],
-  remainingProduct: [{ 
-    userId: {
-      type: String,
-    },
-
-    serialNo: {
-      type: String,
-    },
-    category: {
-      type: String,
-    },
-    itemDescription: {
-      type: String,
-    },
-    qty: {
-      type: String,
-    },
-    sellPrice: {
-      type: String,
-    },
-  }],
+  ],
 });
 
 module.exports = mongoose.model('User', usersSchema);
+
+
+
+// const mongoose = require('mongoose');
+
+// const usersSchema = new mongoose.Schema({
+
+
+//   businessName: {
+//     type: String,
+//   },
+//   firstName: {
+//     type: String,
+//   },
+//   lastName: {
+//     type: String,
+//   },
+//   userName: {
+//     type: String,
+//   },
+//   email: {
+//     type: String,
+//   },
+//   password: {
+//     type: String,
+//   },
+//   confirmPassword: {
+//     type: String,
+//   },
+//   productList: [
+//     {
+//       userId: {
+//         type: String,
+//       },
+//       entryDate: {
+//         type: String,
+//       },
+//       serialNo: {
+//         type: String,
+//       },
+//       category: {
+//         type: String,
+//       },
+//       itemDescription: {
+//         type: String,
+//       },
+//       qty: {
+//         type: String,
+//       },
+//       buyPrice: {
+//         type: String,
+//       },
+//       sellPrice: {
+//         type: String,
+//       },
+//       profit: {
+//         type: String,
+//       },
+//     },
+//   ],
+//   salesList: [{
+//     salesId: {
+//       type: String,
+//     },
+//     serialNo: {
+//       type: String,
+//     },
+//     category: {
+//       type: String,
+//     },
+//     itemDescription: {
+//       type: String,
+//     },
+//     qty: {
+//       type: String,
+//     },
+//     sellPrice: {
+//       type: String,
+//     },
+//     totalPrice: {
+//       type: String,
+//     },
+
+//   }],
+//   remainingProduct: [{ 
+//     userId: {
+//       type: String,
+//     },
+
+//     serialNo: {
+//       type: String,
+//     },
+//     category: {
+//       type: String,
+//     },
+//     itemDescription: {
+//       type: String,
+//     },
+//     qty: {
+//       type: String,
+//     },
+//     sellPrice: {
+//       type: String,
+//     },
+//   }],
+//   temporaryProduct:
+//   [{ 
+//     userName: {
+//       type: String,
+//     },
+
+//     serialNo: {
+//       type: String,
+//     },
+//     category: {
+//       type: String,
+//     },
+//     itemDescription: {
+//       type: String,
+//     },
+//     qty: {
+//       type: String,
+//     },
+//     sellPrice: {
+//       type: String,
+//     },
+//   }],
+// });
+
+// module.exports = mongoose.model('User', usersSchema);
 
 
   

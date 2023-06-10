@@ -3,7 +3,8 @@
             import React, { useEffect } from 'react';
             import { useSelector, useDispatch } from 'react-redux';
             import { useNavigate } from 'react-router-dom';
-            import { setLoggedInUser } from '../../component/userReducer'
+            import { setLoggedInUser } from '../../component/userReducer';
+            import PosForm from '../../component/posForm/posForm';
            
            function OnlinePos() {
              const loggedInUser = useSelector(state => state.loggedInUser);
@@ -42,9 +43,11 @@
                             </div>
                              <div className="p-0 d-flex justify-content-center align-content-center">
                                  <h2>Logged in as user:</h2>
+                                 <h3>{loggedInUser}</h3>
                             </div>
                             <div className="p-0 d-flex justify-content-center align-content-center">
-                                <h3>{loggedInUser}</h3>
+                                
+                                <PosForm />
                             </div>
                         </div>
                    </main>

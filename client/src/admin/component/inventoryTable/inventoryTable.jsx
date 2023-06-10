@@ -51,6 +51,7 @@ function InventoryTable() {
   return (
     <>
       <div>
+      <h1 className="text-center my-4">All Inventory History</h1>
         <Table responsive="sm" striped>
           <thead>
             <tr>

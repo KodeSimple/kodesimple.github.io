@@ -51,6 +51,7 @@ function CurrentProductTable() {
   return (
     <>
       <div>
+      <h1 className="text-center my-4">Current Available Products</h1>
         <Table responsive="sm" striped>
           <thead>
             <tr>
@@ -60,29 +61,29 @@ function CurrentProductTable() {
               ))}
             </tr>
           </thead>
-              <tbody>
-                 {loggedInUser && (
-                   <tr>
-                     <td colSpan={tableHeaders.length + 1}>
-                       <h5>Good day! {loggedInUser}</h5>
-                     </td>
-                   </tr>
-                 )}
-                 {userProducts.slice().reverse().map((data, index) => (
-                   <tr key={index}>
-                     <td>{userProducts.length - index}</td>
-                     <td className="hidden-cell">{data.userId}</td>
-                     {/* <td>{data.entryDate}</td> */}
-                     <td>{data.serialNo}</td>
-                     <td>{data.category}</td>
-                     <td>{data.itemDescription}</td>
-                     <td>{data.qty}</td>
-                     {/* <td>{parseFloat(data.buyPrice).toFixed(2)}</td> */}
-                     <td>{parseFloat(data.sellPrice).toFixed(2)}</td>
-                     {/* <td>{parseFloat(data.profit).toFixed(2)}</td> */}
-                   </tr>
-                 ))}
-             </tbody>
+          <tbody>
+            {loggedInUser && (
+              <tr>
+                <td colSpan={tableHeaders.length + 1}>
+                  <h5>Good day! {loggedInUser}</h5>
+                </td>
+              </tr>
+            )}
+            {userProducts.map((data, index) => (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td className="hidden-cell">{data.userId}</td>
+                {/* <td>{data.entryDate}</td> */}
+                <td>{data.serialNo}</td>
+                <td>{data.category}</td>
+                <td>{data.itemDescription}</td>
+                <td>{data.qty}</td>
+                {/* <td>{parseFloat(data.buyPrice).toFixed(2)}</td> */}
+                <td>{parseFloat(data.sellPrice).toFixed(2)}</td>
+                {/* <td>{parseFloat(data.profit).toFixed(2)}</td> */}
+              </tr>
+            ))}
+          </tbody>
         </Table>
       </div>
     </>
@@ -90,3 +91,4 @@ function CurrentProductTable() {
 }
 
 export default CurrentProductTable;
+
