@@ -1,0 +1,83 @@
+
+  
+  
+  /* .form {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  } */
+  
+  .input-container {
+    margin-bottom: 5x;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .input-container input {
+    width: 100%; /* Adjust the width as needed */
+    height: 35px; /* Adjust the height as needed */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 5px;
+    font-size: 12px;
+  }
+  
+  .button-container {
+    text-align: right;
+  }
+  
+  .button-container .login-btn {
+    background-color: rgb(84, 96, 99);
+    padding: 10px 20px;
+    color: rgb(234, 239, 241);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+  
+  .login-btn:hover {
+    transform: scale(1.05);
+  background-color: rgb(89, 135, 141);
+  }
+  
+  @media screen and (max-width: 480px) {
+    .login-form {
+      max-width: 375px;
+      padding: 10px;
+    }
+  }
+
+
+  /* spinner css */
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items:baseline;
+  }
+  
+  .spinner {
+    width: 50px; /* Adjust the size of the spinner */
+    height: 50px;
+    border: 5px solid #f3f3f3; /* Spinner color */
+    border-top: 5px solid #3498db; /* Spinner color */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

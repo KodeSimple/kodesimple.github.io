@@ -1,0 +1,22 @@
+.spinner-container {
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    height: 100vh; /* height */
+  }
+  
+  .spinner {
+    width: 50px; /* Adjust the size of the spinner */
+    height: 50px;
+    border: 5px solid #f3f3f3; /* Spinner color */
+    border-top: 5px solid #3498db; /* Spinner color */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .hrefLink{text-decoration: none;}
