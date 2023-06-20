@@ -1,0 +1,91 @@
+.contact-form {
+    margin-top: 20px;
+    border: 1px solid #3700ff; /* Replace #ff0000 with your desired border color */
+    padding: 20px;
+    border-radius: 4px;
+  }
+  
+  .contact-form label {
+    font-weight: bold;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .contact-form button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .contact-form button[type="submit"]:hover {
+    background-color: #0069d9;
+  }
+  
+  .hrLines {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .contact-container {
+    display: flex;
+    background-color: #ffffff;
+    justify-content: center;
+    border: 2px solid black;
+    /* outline: #8399ae solid 10px; */
+    margin: auto;  
+    padding: 15px;
+    text-align: left;
+    border-radius: 50px;
+ 
+  }
+
+  .contact-item {
+   
+    /* background-color: #ffffff; */
+    padding: 0px !important;
+    width: 350px;
+    margin-bottom: 10px;
+    
+  }
+
+  .container-row {
+    padding: 0px !important;
+    margin-bottom: 50px;
+    
+  }
+
+  .button-form {
+    
+  }
+  .col-contact {
+    border-radius: 10px;
+  }
+  
+  .p-contact{
+    margin-top: 20px;
+  }
+
+  .image-contact{
+    margin-top: 20px;
+    text-align: center;
+ 
+  
+  }
+
+  .iframe-contact{
+    padding-top: 20px;
+  }
+
+  

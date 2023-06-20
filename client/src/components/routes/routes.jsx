@@ -12,6 +12,7 @@ import PosInventory from '../../admin/pages/inventory/PosInventory';
 import Sales from '../../admin/pages/sales/PosSales';
 import User from '../../admin/pages/user/PosUser';
 import PosContact from '../../admin/pages/contact/PosContact';
+import Mobilepos from '../../pages/content/mobilepos';
 
 
 function AppRoutes() {
@@ -33,6 +34,7 @@ function AppRoutes() {
              <Route path="/sales" element={<Sales />} />
              <Route path="/pos-user" element={<User />} />
              <Route path="/pos-contact" element={<PosContact />} />
+             <Route path="/mobile-pos" element={<Mobilepos />} />
         </Routes>
     </>
   );

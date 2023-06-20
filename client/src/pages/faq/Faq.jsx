@@ -28,54 +28,37 @@ function Faq() {
                                 {/* <!---------accrodion starts here---------> */}
                                 <Accordion>
                                         <Accordion.Item eventKey="0">
-                                          <Accordion.Header> Is this system is free?</Accordion.Header>
+                                          <Accordion.Header> Is mobile POS suitable for all types of businesses?</Accordion.Header>
                                           <Accordion.Body>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                            aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                            culpa qui officia deserunt mollit anim id est laborum.
+                                          Mobile POS is suitable for various businesses, including retail stores, restaurants, and service-oriented businesses, as it offers flexibility, mobility, and enhanced inventory management capabilities.
                                           </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="1">
-                                          <Accordion.Header>How many users are the limit per email?</Accordion.Header>
+                                          <Accordion.Header>Can mobile POS handle large inventories??</Accordion.Header>
                                           <Accordion.Body>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                            aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                            culpa qui officia deserunt mollit anim id est laborum.
+                                          Yes, mobile POS systems can handle large inventories by providing real-time tracking, efficient search capabilities, and advanced reporting features.
                                           </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="2">
-                                          <Accordion.Header> Are invetory and sales data are availbale to download?</Accordion.Header>
+                                          <Accordion.Header> How secure is inventory data on mobile POS systems?</Accordion.Header>
                                           <Accordion.Body>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                            aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                            culpa qui officia deserunt mollit anim id est laborum.
+                                          Reputable mobile POS vendors prioritize data security and employ measures such as encryption, access controls, and regular system updates to protect inventory data.
                                           </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="3">
-                                          <Accordion.Header> Is there a user manual?</Accordion.Header>
+                                          <Accordion.Header> Can mobile POS help with multi-location inventory management?</Accordion.Header>
                                           <Accordion.Body>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                            aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                            culpa qui officia deserunt mollit anim id est laborum.
+                                          Yes, mobile POS systems enable businesses to manage inventory across multiple locations, providing real-time visibility and centralizing data for efficient multi-location inventory management.
+                                          </Accordion.Body>
+                                        </Accordion.Item>
+                                        <Accordion.Item eventKey="4">
+                                          <Accordion.Header> What are the costs associated with implementing mobile POS for inventory management?</Accordion.Header>
+                                          <Accordion.Body>
+                                          The costs of implementing mobile POS for inventory management can vary depending on the chosen system and business requirements. Costs may include hardware, software licensing, training, and ongoing support fees.
                                           </Accordion.Body>
                                         </Accordion.Item>
                                       </Accordion>
+                 
                                 {/* <!---------accordion ends here------------> */}
                               </div> {/* <!------firt item end tag------> */}
                             </div> {/* <!--- flex container main end tag---->*/}
