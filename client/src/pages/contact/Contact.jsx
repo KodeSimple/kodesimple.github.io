@@ -10,6 +10,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 // import { AiFillFacebook, AiFillInstagram } from 'react-icons/ai';
 
 function Contact() {
+  
   return(
      <> 
          {/* header section  starts here */}
