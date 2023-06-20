@@ -1,0 +1,97 @@
+
+/* HEADER SECTION END */
+.footerBgColor{background-color: #036384;}
+.footerAllPage {
+  align-items: last baseline;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+ /* Blog Page Section starts here */
+
+hr.hrLines {
+  border: 5px solid green;
+  border-radius: 5px;
+}
+
+
+/*  Reposive table start here*/
+.table-container{overflow-x:auto};
+
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.showHideTableButton{
+  /* max-width: 10px; */
+  background-color: #e9f3f1;
+  border: 2px solid #036384;
+  border-radius: 10px;
+  color: rgb(17, 23, 26);
+  cursor: pointer;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 180px;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: 
+    'Trebuchet MS',
+     /* 'Lucida Sans Unicode', 
+     'Lucida Grande', 
+     'Lucida Sans',
+      Arial,
+       sans-serif; */
+       
+   }
+  
+  .showHideTableButton:hover{
+      background-color: #036384;
+      border: 2px solid #036384;
+    }
+
+.success {
+  background-color: #d4edda;
+  border-radius: 5px;
+  color: #155724;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.field-container {
+  margin-bottom: 20px;
+}
+
+/*   registration form ends here */
+
+/* inventory management area */
+
+.tableToHide{display: none;}
+
+input[type="text"],
+input[type="number"]{
+  border: none;
+  border-radius: 3px;
+  box-shadow: inset 0 2px 3px rgba(0,0,0,.1);
+  font-size: 16px;
+  padding: 2px;
+  width: 100%;
+}
+
+.fontStyling{font-size: 16px; font-weight: bold;}

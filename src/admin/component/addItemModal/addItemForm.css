@@ -1,0 +1,30 @@
+.AddItemSubmitButton{
+    /* max-width: 10px; */
+    display:flex;
+    display: block;
+    background-color: #e9f3f1;
+    border: 2px solid #036384;
+    border-radius: 10px;
+    color: rgb(17, 23, 26);
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 180px;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 
+      'Trebuchet MS',
+       /* 'Lucida Sans Unicode', 
+       'Lucida Grande', 
+       'Lucida Sans',
+        Arial,
+         sans-serif; */
+         
+     }
+    
+       .AddItemSubmitButton:hover{
+        background-color: #036384;
+        border: 2px solid #036384;
+      }

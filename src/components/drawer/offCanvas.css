@@ -1,0 +1,42 @@
+.offCanvasButton{
+    /* max-width: 10px; */
+    background-color: #e9f3f1;
+    border: 2px solid #036384;
+    border-radius: 10px;
+    color: rgb(17, 23, 26);
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100px;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 
+      'Trebuchet MS',
+       /* 'Lucida Sans Unicode', 
+       'Lucida Grande', 
+       'Lucida Sans',
+        Arial,
+         sans-serif; */
+         
+     }
+  
+  
+  
+  .offCanvasButton:hover {
+    background-color: #036384;
+    border: 2px solid #036384;
+    }
+
+ .offCanvasBody {
+  background-color: #97bebe;
+
+   }
+   
+ .offCanvasHeader {
+  background-color: #97bebe;
+   }
+  /* .registrationButton{
+            display:none
+           } */
