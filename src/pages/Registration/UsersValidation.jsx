@@ -22,7 +22,11 @@ function UsersValidation() {
     event.preventDefault();
     const { userName, password } = event.target.elements;
     setLoading(true);
+<<<<<<< HEAD
     setError({}); // Clear existing errors
+=======
+    setError({}); ////// Clear existing errors
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
 
     apiService
       .post('/users/login', { userName: userName.value, password: password.value })
@@ -35,7 +39,11 @@ function UsersValidation() {
           const expirationTime = new Date().getTime() + 24 * 60 * 60 * 1000;
           localStorage.setItem('loggedInUser', resUser);
           localStorage.setItem('loggedInUserExpiration', expirationTime);
+<<<<<<< HEAD
           navigate('/online-pos'); // Navigate to next page
+=======
+          navigate('/online-pos'); ////// Navigate to next page
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
         } else {
           setError({
             user: errorMessages.user,
@@ -63,7 +71,11 @@ function UsersValidation() {
 
   useEffect(() => {
     if (isSubmitted) {
+<<<<<<< HEAD
       navigate('/online-pos'); // Navigate to next page
+=======
+      navigate('/online-pos'); //// Navigate to next page
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
     }
   }, [isSubmitted, navigate]);
 

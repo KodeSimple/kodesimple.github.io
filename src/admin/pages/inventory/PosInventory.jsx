@@ -8,12 +8,20 @@ import { useNavigate } from 'react-router-dom';
 import { setLoggedInUser } from '../../component/userReducer';
 import AddItemModal from '../../component/addItemModal/addItemModal';
 import CurrentProductTable from '../../component/currentProductTable/currentProductTable';
+<<<<<<< HEAD
+=======
+import '../inventory/PosInventory.css';
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
 
 function PosInventory() {
   const loggedInUser = useSelector((state) => state.loggedInUser);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+<<<<<<< HEAD
   const [showInventoryTable, setShowInventoryTable] = useState(true); // State to control which table to show
+=======
+  const [showInventoryTable, setShowInventoryTable] = useState(true); ////// State to control which table to show
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
   console.log(loggedInUser);
 
 
@@ -40,6 +48,7 @@ function PosInventory() {
         <div>
           <PosNavBarComp />
         </div>
+<<<<<<< HEAD
         <main>
           <section>
                <div className="d-flex d-block flex-column-sm self-align-content-center pt-3 flex-wrap container-fluid justify-content-start w-50">
@@ -60,6 +69,30 @@ function PosInventory() {
                        {!showInventoryTable && <CurrentProductTable />}
                 </div>
           </section>
+=======
+        <main className="posInventoryMain">
+       
+               <div className="d-flex d-inline-block justify-content-start pt-3 w-100 posInventoryButton">
+                       <div className="mb-2">
+                                <AddItemModal />
+                       </div>
+                      <div className="mb-2">
+                             <div className="align-items-center container-fluid d-flex ">
+                                <button className="showHideTableButton" onClick={handleToggleTable}>
+                                      {showInventoryTable ? 'Show All History':'Show Current'}
+                                </button>
+                            </div>
+                      </div>
+               </div>
+
+               <div className="table-container flex-col container-fluid d-flex justify-content-center w-100 pb-2">
+                           {showInventoryTable && <CurrentProductTable />}
+               </div>
+                <div className="table-container flex-col container-fluid d-flex justify-content-center w-100 pb-2">
+                            {!showInventoryTable && <InventoryTable />}
+                </div>
+        
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
         </main>
         <div>
           <PosFooter />

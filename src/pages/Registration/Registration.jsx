@@ -74,8 +74,11 @@ function Registration({ handleShowSignIn }) {
             });
             handleShowSignIn();
             console.log(isLoading);
+<<<<<<< HEAD
            
 
+=======
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
             alert('Registration successful proceed to login')
           }, 200);
         }
@@ -170,9 +173,14 @@ function Registration({ handleShowSignIn }) {
               />
               {errorHandler('confirmPassword')}
             </div>
+<<<<<<< HEAD
 
                     <div className="button-container">
                        <button className="signup-btn" type="submit">
+=======
+                    <div className="button-container">
+                    <button className="signup-btn" onClick={handleSubmit} type="submit">
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
                            Register
                        </button>
                   </div>   
@@ -186,6 +194,7 @@ function Registration({ handleShowSignIn }) {
 export default Registration;
 
 
+<<<<<<< HEAD
 // import apiService from '../../api-service/apiService';
 // import '../Registration/Registration.css';
 // import React, { useState } from 'react';
@@ -370,3 +379,5 @@ export default Registration;
 
 
   
+=======
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab

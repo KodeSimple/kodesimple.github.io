@@ -13,6 +13,7 @@
     font-weight: bold;
     font-size: 16px;
     font-family: 
+<<<<<<< HEAD
       'Trebuchet MS',
        /* 'Lucida Sans Unicode', 
        'Lucida Grande', 
@@ -24,11 +25,25 @@
   
   
   
+=======
+      'Trebuchet MS';      
+     }
+  
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
   .offCanvasButton:hover {
     background-color: #036384;
     border: 2px solid #036384;
     }
 
+<<<<<<< HEAD
+=======
+  .offCanvasButton:active {
+    background-color: #036384 !important;
+    border:none !important;
+    transform: translateY(10px) !important;
+    }
+
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
  .offCanvasBody {
   background-color: #97bebe;
 

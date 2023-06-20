@@ -1,4 +1,5 @@
 import React from 'react'
+<<<<<<< HEAD
 // import JoelProfile from '../../components/resources/picture.jpg'
 // import JinkyProfile from '../../components/resources/picture.jpg'
 // import RenzProfile from '../../components/resources/picture.jpg'
@@ -6,6 +7,13 @@ import NavBarComp from '../../components/header/NavBarComp'
 import Footer from '../../components/footer/Footer'
 import jinkyCatat from '../../components/resources/jinky-catat.jpg';
 import joelSiroy from '../../components/resources/joel-siroy.jpg';
+=======
+import JoelProfile from '../../components/resources/picture.jpg'
+import JinkyProfile from '../../components/resources/picture.jpg'
+import RenzProfile from '../../components/resources/picture.jpg'
+import NavBarComp from '../../components/header/NavBarComp'
+import Footer from '../../components/footer/Footer'
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
 
 function About() {
   return (
@@ -21,6 +29,7 @@ function About() {
                         <div class="pt-5 w-50 bg-body">
                                  <h1>About</h1>
                                  <hr class="hrLines" />
+<<<<<<< HEAD
 
                                  <p>
                                       Welcome to Kode Simple, a revolutionary "Turn your mobile into POS" business
@@ -41,45 +50,88 @@ function About() {
                                     <p>
                                       Join the mobile revolution today and use Kode Simple to realize the full potential of your company.
                                     </p>
+=======
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
                         </div>
                     </div>
                              {/* about content starts here  */}
                       <div className="d-flex d-block f justify-content-center
                                                p-2 flex-row container-fluid about-responses w-50">
                         {/* <!--  flex item 1 starts here--> */}
+<<<<<<< HEAD
                         <div className="w-100 bg-body-primary flex-nowrap">     {/* <!--container item set 1 --> */}   
                           <div class="d-flex flex-column container-fluid  ">
                             <div className="p-2 w-100">
                               <p>
                               <img src={joelSiroy} alt="Joel Profile" className="index-brochure w-100" fluid />
+=======
+                        <div className="w-100 bg-body flex-nowrap">     {/* <!--container item set 1 --> */}   
+                          <div class="d-flex flex-column container-fluid bg-black ">
+                            <div className="p-2 w-100">
+                              <p>
+                              <img src={JoelProfile} alt="Joel Profile" className="index-brochure w-100" fluid />
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
                               </p>
                             </div>
                             <div className="p-2  w-100 container-fluid">
                               <p>
+<<<<<<< HEAD
                               <a href="https://github.com/jsiroy">Joel Siroy</a>
+=======
+                                joel's github account here
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
                               </p>
                             </div>
                           </div>
                         </div>
                         {/* <!--  flex item 1 ends here--> */}
                         {/* <!--  flex item 2 stars here--> */}
+<<<<<<< HEAD
                         <div className="w-100 bg-body-primary flex-nowrap"> {/* <!--container item set 2 --> */}   
                           <div className="d-flex flex-column container-fluid ">
                             <div className="p-2  w-100">
                               <p>
                               <img src={jinkyCatat} alt="Jinky Profile" className="index-brochure w-100" fluid />
+=======
+                        <div className="w-100 bg-body-secondary flex-nowrap"> {/* <!--container item set 2 --> */}   
+                          <div className="d-flex flex-column container-fluid bg-success">
+                            <div className="p-2  w-100">
+                              <p>
+                              <img src={JinkyProfile} alt="Jinky Profile" className="index-brochure w-100" fluid />
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
                               </p>
                             </div>
                             <div className="p-2  w-100 container-fluid">
                               <p>
+<<<<<<< HEAD
                                 <a href="https://github.com/catatjinky">Jinky Catat</a>
+=======
+                                Jinky's github account here
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
                               </p>
                             </div>
                           </div>
                         </div> 
                         {/* <!--  flex item 2 ends here--> */}
                         {/* <!--  flex item 3 starts here--> */}
+<<<<<<< HEAD
                         
+=======
+                        <div className="w-100 bg-body flex-nowrap">     {/* <!--container item set 1 --> */}   
+                          <div className="d-flex flex-column container-fluid bg-black ">
+                            <div className="p-2 w-100">
+                              <p>
+                              <img src={RenzProfile} alt="Joel Profile" className="index-brochure w-100" fluid />
+                              </p>
+                            </div>
+                            <div className="p-2  w-100 container-fluid">
+                              <p>
+                                Renz github account here
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
                         {/* <!--  flex item 3 ends here--> */}
                       </div>   
                   {/* inserterted code ends here */}

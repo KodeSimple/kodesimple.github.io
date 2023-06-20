@@ -5,6 +5,10 @@
   margin: 20px;
   color: white;
   text-decoration: none;
+<<<<<<< HEAD
+=======
+  font-family: 'Trebuchet MS';
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
 }
 
 .navbar{
@@ -34,10 +38,40 @@
   opacity: 0.5;
  }
 
+<<<<<<< HEAD
 .navBarColor{
+=======
+.navBarContainer{
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
     background-color: #036384;
     }
 
 .nav-link:hover {
   text-decoration: none !important;
+<<<<<<< HEAD
 }
+=======
+}
+
+.brandLogo{
+  height:80px;
+}
+
+.navBar{
+}
+
+@media (max-width: 500px)  {
+  .brandLogo {
+    height:50px;
+    
+  }
+}
+
+/* @media (max-width: 500px) and (min-width: 376px) {
+  .brandLogo {
+    height:50px;
+    
+  }
+} */
+
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab

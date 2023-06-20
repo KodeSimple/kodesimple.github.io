@@ -7,6 +7,10 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
+<<<<<<< HEAD
+=======
+    "emailjs-com": "^3.2.0",
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
     "formik": "^2.4.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",

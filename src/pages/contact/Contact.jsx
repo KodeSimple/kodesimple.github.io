@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBarComp from '../../components/header/NavBarComp';
 import Footer from '../../components/footer/Footer';
+<<<<<<< HEAD
 import AiFillFacebook from '../../components/resources/fb-icon.png';
 import AiFillInstagram from '../../components/resources/insta-icon.png';
 import { Form, Button} from 'react-bootstrap';
@@ -11,6 +12,10 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 function Contact() {
   
+=======
+
+function Contact() {
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
   return(
      <> 
          {/* header section  starts here */}
@@ -20,6 +25,7 @@ function Contact() {
          <secction class="contact">
               <div class="d-flex flex-row justify-content-center align-self-center bg-gradient pt-5 flex-nowrap container-fluid">
                 <div class="pt-5 w-50 bg-body">
+<<<<<<< HEAD
                      <h1>Contact Us</h1>
                      <p class="mt-4 mb-4">
                      Fill out the form and a member from our sales team will get back to you within 24 hours, or scroll down for more ways to get in touch.
@@ -186,6 +192,12 @@ function Contact() {
  
 
 
+=======
+                     <h1>Contact information here</h1>
+                      <hr class="hrLines" />
+          {/* content starts here */}
+
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
            {/* contents ends here */}
                 </div>
               </div>

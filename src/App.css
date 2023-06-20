@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+<<<<<<< HEAD
 }
 
 /* .App-logo {
@@ -37,6 +38,15 @@
   }
 } */
 
+=======
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.globalStyling{
+  font-family: 'Trebuchet MS';
+}
+
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
 main{min-height: 100vh};
 
 

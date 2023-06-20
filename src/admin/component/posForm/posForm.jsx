@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import { Form, Table, Button, Spinner } from 'react-bootstrap';
 import apiService from '../../../api-service/apiService';
@@ -5,13 +6,28 @@ import { useSelector } from 'react-redux';
 
 const PosForm = () => {
   const loggedInUser = useSelector(state => state.loggedInUser);
+=======
+import React, { useState } from 'react';
+import { Form, Button, Alert, Spinner } from 'react-bootstrap';
+import apiService from '../../../api-service/apiService';
+import { useSelector } from 'react-redux';
+import PosTable from '../posTable/posTable';
+import '../posForm/posForm.css';
+
+const PosForm = () => {
+  const loggedInUser = useSelector((state) => state.loggedInUser);
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
   const [serialNo, setSerialNo] = useState('');
   const [quantity, setQuantity] = useState('');
   const [searchResult, setSearchResult] = useState(null);
   const [error, setError] = useState(null);
   const [cartItems, setCartItems] = useState([]);
+<<<<<<< HEAD
   const [isLoading, setIsLoading] = useState(false);
   const [responseMsg, setResponseMsg] = useState('');
+=======
+  const [loading, setLoading] = useState(false);
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
 
   const handleSerialNoChange = (e) => {
     setSerialNo(e.target.value);
@@ -22,10 +38,27 @@ const PosForm = () => {
   };
 
   const handleSearch = async () => {
+<<<<<<< HEAD
     try {
       const posRequest = {
         userName: loggedInUser,
         remainingProduct: [{ serialNo: serialNo, qty: quantity }]
+=======
+    if (!serialNo || !quantity) {
+      setError('Serial No. and Quantity are required');
+      setTimeout(() => {
+        setError('');
+      }, 5000); // Clear the message after 5 seconds
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const posRequest = {
+        userName: loggedInUser,
+        remainingProduct: [{ serialNo: serialNo, qty: quantity }],
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
       };
 
       const response = await apiService.post('/users/search-product', posRequest);
@@ -38,23 +71,40 @@ const PosForm = () => {
           qty: parseInt(qty),
           sellPrice,
           totalPrice,
+<<<<<<< HEAD
           serialNo: serialNo
         };
 
         const updatedCartItems = [...cartItems, newItem];
         setCartItems(updatedCartItems);
+=======
+          serialNo: serialNo,
+        };
+
+        setCartItems([...cartItems, newItem]);
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
         setSearchResult(null);
         setSerialNo('');
         setQuantity('');
         setError(null);
+<<<<<<< HEAD
         localStorage.setItem('cartItems', JSON.stringify(updatedCartItems)); // Store cartItems in localStorage
       } else {
         setSearchResult(null);
         setError('Item not found');
+=======
+      } else {
+        setSearchResult(null);
+        setError('Item not found');
+        setTimeout(() => {
+          setError('');
+        }, 5000); // Clear the message after 5 seconds
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
       }
     } catch (error) {
       if (error.response && error.response.status === 400) {
         setError('Quantity not sufficient');
+<<<<<<< HEAD
       } else {
         console.log(error);
         setError('Error searching for item');
@@ -132,10 +182,19 @@ const PosForm = () => {
       } catch (error) {
         console.log(error);
         setError('Error fetching user product list');
+=======
+        setTimeout(() => {
+          setError('');
+        }, 5000); // Clear the message after 5 seconds
+      } else {
+        // console.log(error);
+        setError('Error searching or Item not found');
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
         setTimeout(() => {
           setError('');
         }, 5000); // Clear the message after 5 seconds
       }
+<<<<<<< HEAD
     };
 
     fetchData();
@@ -217,6 +276,64 @@ const PosForm = () => {
 
       {responseMsg && <div>{responseMsg}</div>}
     </div>
+=======
+    } finally {
+      setLoading(false);
+    }
+  };
+  console.log(searchResult);
+  return (
+    <>
+      <div className="d-flex d-block flex-column justify-content-center posFormContainer w-100">
+        <div className="pt-4 px-5  container-fluid posInputContainer">
+          <div className="posInputItem pt-4">
+            <Form>
+              <Form.Group controlId="formSerialNo">
+                <Form.Label>Serial No.:</Form.Label>
+                <Form.Control
+                  className="posInputField"
+                  type="text"
+                  placeholder="Enter serial number"
+                  value={serialNo}
+                  onChange={handleSerialNoChange}
+                />
+              </Form.Group>
+
+              <Form.Group controlId="formQuantity">
+                <Form.Label>Quantity:</Form.Label>
+                <Form.Control
+                  className="posInputField"
+                  type="number"
+                  placeholder="Enter quantity"
+                  value={quantity}
+                  onChange={handleQuantityChange}
+                />
+              </Form.Group>
+               <div className="pt-3">
+              <Button className="searchButton " onClick={handleSearch} disabled={loading}>
+                {loading ? (
+                  <>
+                    <Spinner animation="border" size="sm" /> Searching...
+                  </>
+                ) : (
+                  'Search'
+                )}
+              </Button>
+              </div>
+            </Form>
+            <div className="text-center pt-3">
+              {error && <Alert variant="success">{error}</Alert>}
+            </div>
+          </div>
+        </div>
+        <div className="posInputTable container-fluid">
+          <div className="posTableItem justify-content-end">
+            <PosTable />
+          </div>
+        </div>
+      </div>
+    </>
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
   );
 };
 
@@ -224,6 +341,7 @@ export default PosForm;
 
 
 
+<<<<<<< HEAD
 // import React, { useState, useEffect } from 'react';
 // import { Form, Table, Button, Spinner } from 'react-bootstrap';
 // import apiService from '../../../api-service/apiService';
@@ -1194,6 +1312,8 @@ export default PosForm;
 
 // export default PosForm;
 
+=======
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
 
 
 

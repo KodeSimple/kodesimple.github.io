@@ -1,0 +1,44 @@
+.salesReceipt{
+    font-family: 'Trebuchet MS';
+}
+
+.printButton {
+    padding: 4px 10px;
+    font-size: 15x;
+    cursor: pointer;
+    color: black;
+    background-color:transparent;
+    border: none;
+    border-radius: 10px;
+  }
+  
+  .printButton:hover {
+    background-color: #036384
+  }
+  
+  .printButton:active {
+    background-color: #036384;
+    transform: translateY(4px);
+  }
+
+  .printButton:focus {
+    background-color: #036384 !important;
+    transform: translateY(4px);
+  }
+
+  .table-bordered {
+    border-color: transparent !important;
+  }
+  
+  .table-bordered th,
+  .table-bordered td {
+    border-color: transparent !important;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color:  transparent !important;
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: transparent !important; 
+  }

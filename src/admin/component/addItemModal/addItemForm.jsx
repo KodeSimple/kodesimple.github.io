@@ -16,7 +16,11 @@ function AddItemForm() {
     const fetchData = async () => {
       try {
         const storedUser = localStorage.getItem('loggedInUser');
+<<<<<<< HEAD
         const formattedDate = new Date().toISOString().slice(0, 10);
+=======
+        const formattedDate = new Date().toLocaleDateString('en-US');
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
 
         if (storedUser) {
           setLoggedInUser(storedUser);
@@ -54,15 +58,27 @@ function AddItemForm() {
     profit: yup.number().required(errorField),
   });
 
+<<<<<<< HEAD
   const handleSubmit = async (values) => {
+=======
+  const handleSubmit = async (values, { resetForm }) => {
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
     setSubmitting(true);
     setSubmissionError(false);
     setSubmissionSuccess(false);
 
     try {
+<<<<<<< HEAD
       const response = await apiService.post('/users/addproduct', {
         userId: loggedInUser,
         entryDate: currentDate,
+=======
+      const currentDate = new Date();
+      const date = currentDate.toLocaleDateString('en-US');
+      const response = await apiService.post('/users/addproduct', {
+        userId: loggedInUser,
+        entryDate: date,
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
         serialNo: values.serialNo,
         category: values.category,
         itemDescription: values.itemDescription,
@@ -74,6 +90,14 @@ function AddItemForm() {
 
       if (response.data.message === 'Item added successfully') {
         setSubmissionSuccess(true);
+<<<<<<< HEAD
+=======
+        resetForm();
+
+        setTimeout(() => {
+          setSubmissionSuccess(false);
+        }, 3000);
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
       } else {
         setSubmissionError(true);
       }
@@ -103,7 +127,10 @@ function AddItemForm() {
     >
       {({ handleSubmit, handleChange, values, touched, errors }) => (
         <Form noValidate onSubmit={handleSubmit}>
+<<<<<<< HEAD
           {/* Form fields and components */}
+=======
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
           <ChildComponent
             handleChange={handleChange}
             values={values}
@@ -113,9 +140,15 @@ function AddItemForm() {
           />
 
           <Form.Group as={Row}>
+<<<<<<< HEAD
             <Col sm={{ span: 10, offset: 2 }} className="px-5 pt-4">
               <div></div>
               <button type="submit" className="AddItemSubmitButton">
+=======
+            <Col sm={{ span: 10, offset: 2 }} className="pt-4">
+              <div className="add-item-submit-container">
+              <button type="submit" onClick={handleSubmit} className="AddItemSubmitButton">
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
                 {submitting ? (
                   <>
                     <Spinner animation="border" size="sm" /> Submitting...
@@ -124,11 +157,21 @@ function AddItemForm() {
                   'Submit'
                 )}
               </button>
+<<<<<<< HEAD
+=======
+              </div>
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
               {submissionError && (
                 <Alert variant="danger">Failed to add item.</Alert>
               )}
               {submissionSuccess && (
+<<<<<<< HEAD
                 <Alert variant="success">Item added successfully.</Alert>
+=======
+              <div className="add-item-submit-container">
+                <Alert variant="success">Item added successfully.</Alert>
+                </div>
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
               )}
             </Col>
           </Form.Group>
@@ -175,15 +218,28 @@ const ChildComponent = ({
 
   return (
     <>
+<<<<<<< HEAD
       <div className="d-flex d-block flex-row flex-wrap justify-content-start">
         <div className="d-flex flex-row w-100">
           <div>
+=======
+    <div>
+      <div className="d-flex d-block flex-column">
+        <div className="d-flex flex-row ">
+          {/* Serial No */}
+          <div className="d-flex flex-row">
+          <div className="d-flex container-fluid addItemInputField ">
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
             <Form.Group as={Row}>
               <Form.Label row sm="10">
                 Serial No
               </Form.Label>
               <Col sm="10">
                 <Form.Control
+<<<<<<< HEAD
+=======
+                  className="add-item-input-field" 
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
                   type="number"
                   name="serialNo"
                   value={values.serialNo}
@@ -197,13 +253,23 @@ const ChildComponent = ({
               </Col>
             </Form.Group>
           </div>
+<<<<<<< HEAD
           <div>
+=======
+          
+          {/* Quantity */}
+          <div className="d-flex container-fluid ">
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
             <Form.Group as={Row}>
               <Form.Label row sm="10">
                 Quantity
               </Form.Label>
               <Col sm="10">
                 <Form.Control
+<<<<<<< HEAD
+=======
+                  className="add-item-input-field" 
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
                   type="number"
                   name="qty"
                   value={values.qty}
@@ -218,14 +284,26 @@ const ChildComponent = ({
             </Form.Group>
           </div>
         </div>
+<<<<<<< HEAD
         <div className="d-flex flex-row w-100">
           <div>
+=======
+        </div>
+        <div className="d-flex flex-row w-100">
+          {/* Buy Price */}
+          <div className="d-flex flex-row ">
+            <div className="d-flex container-fluid addItemInputField">
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
             <Form.Group as={Row}>
               <Form.Label row sm="10">
                 Buy Price
               </Form.Label>
               <Col sm="10">
                 <Form.Control
+<<<<<<< HEAD
+=======
+                  className="add-item-input-field" 
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
                   type="number"
                   name="buyPrice"
                   value={values.buyPrice}
@@ -239,13 +317,23 @@ const ChildComponent = ({
               </Col>
             </Form.Group>
           </div>
+<<<<<<< HEAD
           <div>
+=======
+          
+          {/* Sell Price */}
+          <div className="d-flex container-fluid">
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
             <Form.Group as={Row}>
               <Form.Label row sm="10">
                 Sell Price
               </Form.Label>
               <Col sm="10">
                 <Form.Control
+<<<<<<< HEAD
+=======
+                  className="add-item-input-field" 
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
                   type="number"
                   name="sellPrice"
                   value={values.sellPrice}
@@ -260,13 +348,24 @@ const ChildComponent = ({
             </Form.Group>
           </div>
         </div>
+<<<<<<< HEAD
         <div className="w-100">
+=======
+        </div>
+        {/* Category */}
+        <div className="w-100 addItemInputFieldLong ">
+           <div className="container-fluid ">
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
           <Form.Group as={Row}>
             <Form.Label row sm="11">
               Category
             </Form.Label>
             <Col sm="11">
               <Form.Control
+<<<<<<< HEAD
+=======
+                className="add-item-input-field" 
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
                 type="text"
                 name="category"
                 value={values.category}
@@ -280,13 +379,24 @@ const ChildComponent = ({
             </Col>
           </Form.Group>
         </div>
+<<<<<<< HEAD
         <div className="w-100">
+=======
+        </div>
+        {/* Item Description */}
+        <div className="w-100 addItemInputFieldLong">
+        <div className="container-fluid">
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
           <Form.Group as={Row}>
             <Form.Label row sm="11">
               Item Description
             </Form.Label>
             <Col sm="11">
               <Form.Control
+<<<<<<< HEAD
+=======
+                className="add-item-input-field" 
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
                 type="text"
                 name="itemDescription"
                 value={values.itemDescription}
@@ -299,13 +409,21 @@ const ChildComponent = ({
               </Form.Control.Feedback>
             </Col>
           </Form.Group>
+<<<<<<< HEAD
         </div>
       </div>
+=======
+          </div>
+        </div>
+      </div>
+      </div>
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
     </>
   );
 };
 
 export default AddItemForm;
+<<<<<<< HEAD
 
 
 
@@ -629,3 +747,5 @@ export default AddItemForm;
 // };
 
 // export default AddItemForm;
+=======
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab

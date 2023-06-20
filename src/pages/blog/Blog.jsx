@@ -1,11 +1,14 @@
 import React from 'react';
 import NavBarComp from '../../components/header/NavBarComp';
 import Footer from '../../components/footer/Footer';
+<<<<<<< HEAD
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 // import Button from 'react-bootstrap/Button';
 import Mobilepos from '../content/mobilepos';
 import mobilePos from '../../components/resources/mobile-pos.png';
+=======
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
 
 
 function Blog() {
@@ -24,6 +27,7 @@ function Blog() {
                          <hr class="hrLines" />
                             {/* blogs contents start here */}
 
+<<<<<<< HEAD
                             <div className='mb-5 pb-5'>
 
                               <CardGroup style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -59,6 +63,8 @@ function Blog() {
 
                             </div>
 
+=======
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
                               {/* blogs contents ends here */}
                         </div>
                     </div>

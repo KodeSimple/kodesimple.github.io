@@ -1,3 +1,58 @@
 .hidden-cell {
     display: none;
+<<<<<<< HEAD
   }
+=======
+    font-family: 'Trebuchet MS';
+  }
+
+
+  @media (max-width: 760px){
+  .inventoryTable{
+    width: 100% !important;
+  }
+}
+
+.pagination .page-item .page-link {
+  background-color: transparent; 
+  color: #000000; 
+  border-color: transparent; 
+  border-radius: 10px;
+}
+
+.pagination .page-item .page-link:hover {
+  background-color: rgb(52, 65, 68); 
+  color: #ffffff; 
+  border-color: #a0a0a0; 
+  border-radius: 10px;
+}
+
+.pagination .page-item.active .page-link {
+background-color: rgb(75, 83, 85);
+color: #fff;
+border-color:transparent;
+border-radius: 10px;
+}
+
+/* .pagination {
+position: relative;
+}
+
+.pagination .page-link {
+position: relative;
+z-index: 1;
+} */
+
+.pagination .page-item.active .page-link {
+z-index: 0;
+}
+
+.inventoryTable{
+  background-color: rgb(230, 240, 240);
+  border-radius: 15px;
+  border-color: transparent;
+  box-shadow: -1px 5px 13px 2px rgba(100, 96, 96, 0.63);
+  font-family: 'Trebuchet MS';
+  padding: 20px;
+}
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab

@@ -37,10 +37,17 @@ label {
   margin-left: 5px;
 }
 
+<<<<<<< HEAD
 .showHideTableButton{
   /* max-width: 10px; */
   background-color: #e9f3f1;
   border: 2px solid #036384;
+=======
+.searchButton{
+  /* max-width: 10px; */
+  background-color: #e9f3f1;
+  /* border: 2px solid #036384; */
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
   border-radius: 10px;
   color: rgb(17, 23, 26);
   cursor: pointer;
@@ -61,15 +68,26 @@ label {
        
    }
   
+<<<<<<< HEAD
   .showHideTableButton:hover{
       background-color: #036384;
       border: 2px solid #036384;
+=======
+.searchButton:hover{
+      background-color: #036384;
+      /* border: 2px solid #036384; */
+      color: #ffffff;
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
     }
 
 .success {
   background-color: #d4edda;
   border-radius: 5px;
+<<<<<<< HEAD
   color: #155724;
+=======
+  /* color: #155724; */
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
   margin-top: 20px;
   padding: 10px;
 }
@@ -78,6 +96,7 @@ label {
   margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
 /*   registration form ends here */
 
 /* inventory management area */
@@ -95,3 +114,43 @@ input[type="number"]{
 }
 
 .fontStyling{font-size: 16px; font-weight: bold;}
+=======
+.posInventoryMain{
+  background-color: rgb(173, 198, 207);
+}
+
+
+@media (min-width: 760px){
+  .posInventoryButton{
+    padding-left: 210px !important;
+  }
+}
+
+.showHideTableButton{
+  background-color: #e9f3f1;
+  border-radius: 10px;
+  color: rgb(17, 23, 26);
+  cursor: pointer;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 180px;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: 
+    'Trebuchet MS';
+  
+   }
+  
+.showHideTableButton:hover{
+      background-color: #036384;
+      color: #ffffff;
+    }
+
+.showHideTableButton:active{
+  transform: translateY(4px) !important;
+}
+
+    
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab

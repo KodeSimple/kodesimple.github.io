@@ -1,11 +1,17 @@
 
   
   
+<<<<<<< HEAD
   /* .form {
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
   } */
+=======
+  .form {
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
   
   .input-container {
     margin-bottom: 5x;
@@ -50,7 +56,11 @@
   
   .login-btn:hover {
     transform: scale(1.05);
+<<<<<<< HEAD
   background-color: rgb(89, 135, 141);
+=======
+    background-color: rgb(89, 135, 141);
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
   }
   
   @media screen and (max-width: 480px) {

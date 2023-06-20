@@ -1,0 +1,12 @@
+.posConatactMain{
+    background-color: rgb(173, 198, 207);
+}
+
+.pos-contact-container{
+    font-family: 'Trebuchet MS';
+    margin-bottom: 40px;
+    background-color: rgb(230, 240, 240);
+    border-radius: 15px;
+    border-color: transparent;
+    box-shadow: -1px 5px 13px 2px rgba(100, 96, 96, 0.63);
+}

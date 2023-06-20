@@ -28,6 +28,7 @@ function Faq() {
                                 {/* <!---------accrodion starts here---------> */}
                                 <Accordion>
                                         <Accordion.Item eventKey="0">
+<<<<<<< HEAD
                                           <Accordion.Header> Is mobile POS suitable for all types of businesses?</Accordion.Header>
                                           <Accordion.Body>
                                           Mobile POS is suitable for various businesses, including retail stores, restaurants, and service-oriented businesses, as it offers flexibility, mobility, and enhanced inventory management capabilities.
@@ -59,6 +60,56 @@ function Faq() {
                                         </Accordion.Item>
                                       </Accordion>
                  
+=======
+                                          <Accordion.Header> Is this system is free?</Accordion.Header>
+                                          <Accordion.Body>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                            aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                            culpa qui officia deserunt mollit anim id est laborum.
+                                          </Accordion.Body>
+                                        </Accordion.Item>
+                                        <Accordion.Item eventKey="1">
+                                          <Accordion.Header>How many users are the limit per email?</Accordion.Header>
+                                          <Accordion.Body>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                            aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                            culpa qui officia deserunt mollit anim id est laborum.
+                                          </Accordion.Body>
+                                        </Accordion.Item>
+                                        <Accordion.Item eventKey="2">
+                                          <Accordion.Header> Are invetory and sales data are availbale to download?</Accordion.Header>
+                                          <Accordion.Body>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                            aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                            culpa qui officia deserunt mollit anim id est laborum.
+                                          </Accordion.Body>
+                                        </Accordion.Item>
+                                        <Accordion.Item eventKey="3">
+                                          <Accordion.Header> Is there a user manual?</Accordion.Header>
+                                          <Accordion.Body>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                            aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                            culpa qui officia deserunt mollit anim id est laborum.
+                                          </Accordion.Body>
+                                        </Accordion.Item>
+                                      </Accordion>
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
                                 {/* <!---------accordion ends here------------> */}
                               </div> {/* <!------firt item end tag------> */}
                             </div> {/* <!--- flex container main end tag---->*/}

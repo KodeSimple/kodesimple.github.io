@@ -1,0 +1,163 @@
+.posFormContainer{
+    justify-content: center;
+    display:flex !important;
+    font-family: 'Trebuchet MS';
+    
+}
+.posInputContainer{
+    display: inline-block;
+    background-color: rgb(230, 240, 240);
+    /* margin:2px; */
+    padding: 20px;
+    border: 100px;
+    width: 300px;
+    padding: 50px;
+    border-color: transparent;
+    box-shadow: -1px 5px 13px 2px rgba(100, 96, 96, 0.63);
+    border-radius: 10px;
+    font-family: 'Trebuchet MS';
+}
+.posInputField{
+    min-height: 50px; 
+    text-align: left;
+    font-size: 20px;
+    font-weight:100;
+    background-color: rgb(94, 106, 112);
+    font-family: 'Trebuchet MS';
+}
+ 
+.posInputField::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(252, 248, 248);
+  font-family: 'Trebuchet MS';
+}
+
+.posInputField:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px #036384;
+}
+
+.showHideTableButton{
+    /* max-width: 10px; */
+    background-color: #e9f3f1;
+    border-color: transparent;
+    border-radius: 10px;
+    color: rgb(17, 23, 26);
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 180px;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 
+      'Trebuchet MS';
+     }
+
+.searchButton {
+      padding: 15px 25px;
+      font-size: 24px;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      /* color: #fff; */
+      border: none;
+      border-radius: 15px;
+      box-shadow: -1px 6px 13px 6px rgba(132, 126, 126, 0.6);
+      opacity: 1;
+      background-color: #54a19e !important;
+    }
+    
+.searchButton:hover {
+      /* opacity: .8; */
+      background-color:  #54a19e !important;
+}
+    
+.searchButton:active {
+      background-color: #e8eef0;
+      box-shadow: -1px 6px 13px 6px rgba(132, 126, 126, 0.25);
+      transform: translateY(4px) !important;
+    }
+
+ .posTableItem{
+        /* width: 70%; */
+        /* display: flex; */
+        /* flex: end; */
+        font-family: 'Trebuchet MS';
+    }
+    
+ .showHideTableButton:hover{
+        background-color: #036384;
+        border: 2px solid #036384;
+        color: #ffffff;
+    }
+
+  
+  @media (max-width: 900px) and (min-width: 375px) {
+    .posFormContainer{
+      flex-direction: column !important;
+    }
+   }
+  
+  @media (min-width: 901px) {
+    .posFormContainer{
+      flex-direction: row !important;
+    }
+   }
+  /* //////////////////////////////////////// */ 
+  @media (max-width: 900px) and (min-width: 375px) {
+    .posInputItem{
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 901px) and (max-width: 1000px){
+    .posInputItem{
+      width: 80% !important;
+    }
+  }
+
+  @media (min-width: 600px) and (max-width: 900px){
+    .posInputItem{
+      width: 60% !important;
+    }
+  }
+
+  @media (min-width: 1001px) {
+    .posInputItem{
+      width: 80% !important;
+    }
+  }
+  /* //////////////////////////////////////////////// */
+
+  @media (max-width: 900px) and (min-width: 375px) {
+    .posInputContainer{
+      width: 100%;
+    }
+  }
+  
+  @media (min-width: 901px) and (max-width: 1000px){
+    .posInputContainer{
+      width: 60% !important;
+    }
+  }
+
+  @media (min-width: 1001px) and (max-width: 1400px){
+    .posInputContainer{
+      width: 80% !important;
+    }
+  }
+
+  @media (min-width: 1401px) {
+    .posInputContainer{
+      width: 60% !important;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .posInputField{
+      font-size: 20px;
+      font-weight:85;
+    }
+  }
+ 

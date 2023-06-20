@@ -10,7 +10,11 @@ import './App.css';
       return(
             <>
                <div>  
+<<<<<<< HEAD
                    <main>
+=======
+                   <main className="globalStyling">
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
                       <div><AppRoutes /></div> 
                    </main>
                </div>

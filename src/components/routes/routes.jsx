@@ -12,7 +12,10 @@ import PosInventory from '../../admin/pages/inventory/PosInventory';
 import Sales from '../../admin/pages/sales/PosSales';
 import User from '../../admin/pages/user/PosUser';
 import PosContact from '../../admin/pages/contact/PosContact';
+<<<<<<< HEAD
 import Mobilepos from '../../pages/content/mobilepos';
+=======
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
 
 
 function AppRoutes() {
@@ -34,7 +37,11 @@ function AppRoutes() {
              <Route path="/sales" element={<Sales />} />
              <Route path="/pos-user" element={<User />} />
              <Route path="/pos-contact" element={<PosContact />} />
+<<<<<<< HEAD
              <Route path="/mobile-pos" element={<Mobilepos />} />
+=======
+             <Route path="/change-password" element={<changePassword />} />
+>>>>>>> 9b6f5e99f9b00d0f57144162a9915d87b8ed2fab
         </Routes>
     </>
   );
