@@ -1,0 +1,90 @@
+.userDetailsContainer{
+    font-family: 'Trebuchet MS';
+    margin-bottom: 40px;
+    background-color: rgb(230, 240, 240);
+    border-radius: 15px;
+    border-color: transparent;
+    box-shadow: -1px 5px 13px 2px rgba(100, 96, 96, 0.63);
+}
+
+@media (max-width: 500px){
+  .userDetailsContainer{
+    width: 100% !important;
+  }
+}
+
+.changePasswordSubmitButton {
+    padding: 8px 20px;
+    font-size:15px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    /* color: #fff; */
+    border: none;
+    border-radius: 10px;
+    box-shadow: -1px 6px 13px 6px rgba(132, 126, 126, 0.36);
+    background-color:#288ABB !important;
+  }
+  
+.changePasswordSubmitButton:hover {
+    color: black;
+    background-color:#288ABB !important;
+  }
+  
+.changePasswordSubmitButton:active {
+    background-color: #e8eef0;
+    box-shadow: -1px 6px 13px 6px rgba(132, 126, 126, 0.23);
+    transform: translateY(4px) !important;
+  }
+
+  .changePasswordSubmitButton:focus {
+   color:black !important;
+  }
+
+
+  .input-password-field{
+    min-height: 50px; 
+    text-align: left;
+    font-size: 16px;
+    font-weight:100;
+    background-color: rgb(234, 239, 243);
+    font-family: 'Trebuchet MS';
+}
+ 
+.input-password-field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(197, 185, 185);
+  font-family: 'Trebuchet MS';
+}
+
+
+  .input-password-field:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 2px #036384;
+  }
+
+  
+
+  .change-password-form {
+    font-size:15px;
+    text-align: left;
+    color: rgb(31, 92, 223);
+    cursor: pointer;
+    border: none;
+    background-color:transparent;
+    border: none;
+  }
+  
+.change-password-form:hover {
+   color: black;
+   background-color: transparent;
+  }
+  
+.change-password-form:active {
+    color: rgb(230, 240, 240) !important;
+    background-color: transparent !important;
+  }
+
+  .change-password-form:focus {
+    color: rgb(230, 240, 240) !important;
+    background-color: transparent !important;
+  }

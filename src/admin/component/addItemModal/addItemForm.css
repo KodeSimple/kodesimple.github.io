@@ -1,0 +1,62 @@
+.AddItemSubmitButton{
+    background-color: #e9f3f1;
+    border: none;
+    border-radius: 10px;
+    color: rgb(17, 23, 26);
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 180px;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Trebuchet MS';   
+     }
+    
+.AddItemSubmitButton:hover{
+   background-color: #036384;
+   border: none;
+      }
+
+.AddItemSubmitButton:active{
+  transform: translateY(4px) !important;
+           }
+
+.addItemInputField{
+  display: flex;
+  justify-content: center !important;
+  padding-left: 30px;
+}
+   
+.addItemInputFieldLong{
+  display: flex;
+  justify-content: center !important;
+  padding-left: 20px;
+}
+
+
+.add-item-submit-container{
+  display: flex;
+  padding-left: 40px;
+}
+
+.add-item-input-field{
+  min-height: 50px; 
+  text-align: left;
+  font-size: 16px;
+  font-weight:100;
+  background-color: rgb(234, 239, 243);
+  font-family: 'Trebuchet MS';
+}
+
+.add-item-input-field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+color: rgb(197, 185, 185);
+font-family: 'Trebuchet MS';
+}
+
+
+.add-item-input-field:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px #036384;
+}

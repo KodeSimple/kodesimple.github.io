@@ -1,0 +1,37 @@
+.HomePagebackGroundColor{background-color: #d1e6dd};
+.homeField{background-color: #14241d};
+
+/* ------Body Media query starts here---------*/
+@media (max-width: 375px) {
+    .features-responses {
+        flex-direction: column !important;
+    }
+  }
+  
+  @media (max-width: 500px) and (min-width: 376px) {
+    .features-responses {
+      flex-direction: column !important;
+      
+    }
+  }
+  
+  @media (max-width: 768px) and (min-width: 501px) {
+    .features-responses {
+      flex-direction: row !important;
+    }
+  }
+
+  @media (max-width: 750px) {
+    .about-responses{ flex-direction: column !important
+        /* flex-direction: column; justify-content: center !important; */
+    }
+  }
+  
+  /* main page body starts here*/
+  
+  @media (max-width: 500px) and (min-width: 300px) {  
+    .index-brochure{
+      width: 100% !important;
+    }
+  }
+

@@ -1,0 +1,39 @@
+.contact-button-spinner{
+    background-color:#288ABB !important;
+}
+
+.submit-concern-buton {
+    padding: 8px 15px;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #080000;
+    background-color:#288ABB;
+    border: none;
+    border-radius: 10px;
+    box-shadow: -1px 6px 13px 6px rgba(132, 126, 126, 0.36);
+  }
+  
+  .submit-concern-buton:hover {
+    background-color:#288ABB;
+    color: #fff;
+  }
+  
+  .submit-concern-buton:active {
+    background-color:#288ABB !important;
+    box-shadow: -1px 6px 13px 6px rgba(132, 126, 126, 0.23);
+    transform: translateY(4px);
+  }
+
+
+ .contact-item-field:focus {
+    outline: none;
+    border-color: #080d0f !important;
+    box-shadow: 0 0 0 1px #036384;
+  }
+
+  .contact-item-field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(135, 143, 146);
+    font-family: 'Trebuchet MS';
+  }

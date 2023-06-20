@@ -1,0 +1,73 @@
+.purchaseInfo{
+   color: rgb(12, 12, 12);
+   font-weight:bolder;
+}
+
+.totalPriceContainer{
+    background-color: rgb(94, 106, 112);
+    color: rgb(241, 247, 247) ;
+    padding: 10px;
+    border-radius:5px;
+    border-color: transparent;
+    /* box-shadow: inset 0px 0px 10px 4px rgb(151, 170, 177); */
+    font-family: 'Trebuchet MS';
+}
+
+.salesReceiptButton{
+    display:none;
+    font-family: 'Trebuchet MS';
+}
+
+.proceedPaymentButton {
+    padding: 8px 15px;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #080000;
+    background-color:#288ABB;
+    border: none;
+    border-radius: 10px;
+    box-shadow: -1px 6px 13px 6px rgba(132, 126, 126, 0.52);
+  }
+  
+  .proceedPaymentButton:hover {
+    background-color:#288ABB;
+    color: #fff;
+  }
+  
+  .proceedPaymentButton:active {
+    background-color:#288ABB !important;
+    box-shadow: -1px 6px 13px 6px rgba(132, 126, 126, 0.23);
+    transform: translateY(4px);
+  }
+
+  .handleRemoveButton {
+    padding: 4px 10px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #154de6;
+    background-color: transparent;
+    /* background-color:rgb(66, 74, 77); */
+    border: none;
+    border-radius: 10px;
+  }
+  
+  .handleRemoveButton:hover {
+    box-shadow: -1px 6px 13px 6px rgba(132, 126, 126, 0.57);
+    background-color: #036384;
+  }
+  
+  .handleRemoveButton:active {
+    background-color:#288ABB !important;
+    box-shadow: -1px 6px 13px 6px rgba(132, 126, 126, 0.19);
+    transform: translateY(4px);
+  }
+
+  /* .handleRemoveButton:focus {
+    background-color:#288ABB !important;
+    box-shadow: -1px 6px 13px 6px rgba(132, 126, 126, 0.19);
+    color: #ffffff;
+  } */

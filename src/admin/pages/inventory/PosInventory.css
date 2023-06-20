@@ -1,0 +1,119 @@
+
+/* HEADER SECTION END */
+.footerBgColor{background-color: #036384;}
+.footerAllPage {
+  align-items: last baseline;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+ /* Blog Page Section starts here */
+
+hr.hrLines {
+  border: 5px solid green;
+  border-radius: 5px;
+}
+
+
+/*  Reposive table start here*/
+.table-container{overflow-x:auto};
+
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.searchButton{
+  /* max-width: 10px; */
+  background-color: #e9f3f1;
+  /* border: 2px solid #036384; */
+  border-radius: 10px;
+  color: rgb(17, 23, 26);
+  cursor: pointer;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 180px;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: 
+    'Trebuchet MS',
+     /* 'Lucida Sans Unicode', 
+     'Lucida Grande', 
+     'Lucida Sans',
+      Arial,
+       sans-serif; */
+       
+   }
+  
+.searchButton:hover{
+      background-color: #036384;
+      /* border: 2px solid #036384; */
+      color: #ffffff;
+    }
+
+.success {
+  background-color: #d4edda;
+  border-radius: 5px;
+  /* color: #155724; */
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.field-container {
+  margin-bottom: 20px;
+}
+
+.posInventoryMain{
+  background-color: rgb(173, 198, 207);
+}
+
+
+@media (min-width: 760px){
+  .posInventoryButton{
+    padding-left: 210px !important;
+  }
+}
+
+.showHideTableButton{
+  background-color: #e9f3f1;
+  border-radius: 10px;
+  color: rgb(17, 23, 26);
+  cursor: pointer;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 180px;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: 
+    'Trebuchet MS';
+  
+   }
+  
+.showHideTableButton:hover{
+      background-color: #036384;
+      color: #ffffff;
+    }
+
+.showHideTableButton:active{
+  transform: translateY(4px) !important;
+}
+
+    
